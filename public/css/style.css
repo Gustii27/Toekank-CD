@@ -73,8 +73,8 @@ main {
 
 #contain-menu {
     display: flex;
-    justify-content: center;
-    overflow: hidden;
+    /*justify-content: center;
+    overflow: hidden;*/
     margin: 50px auto;
     width: 40vw;
 }
