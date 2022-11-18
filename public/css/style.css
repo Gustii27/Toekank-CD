@@ -8,25 +8,34 @@ body {
 }
 
 body {
-    font-family: "Roboto";
-    background-image: url(../img/fondo.jpeg);
-    background-size: cover;
-    opacity: 75%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    font-family: "Roboto";    
+    background-color: aliceblue;
 }
 
 main {
     margin: auto;
-    padding: 10px;
+    /*padding: 0px 10px;*/
 }
 
-/*.background-index {
-    /*background-image: url(../img/fondo.jpeg);*/
-    /*background-attachment: fixed;*/
-    /*background-size: 100%;*/
-    /*opacity: 75%;*/
-/*}*/
+.background-index {
+    background-image: url(../img/fondo.jpeg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 85vh;
+    position: relative;
+}
+
+.text-background {
+    font-family: 'Tangerine', serif;
+    font-size: 80px;
+    text-shadow: 2px 2px 2px #aaa;
+    color: #3A3537;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin: 0;
+}
 
 .background-contacts {
     background-color: beige;
@@ -43,13 +52,14 @@ main {
 /* MENUS */
 
 .main-menu {
-    height: 30px;
+    display: grid;
 }
 
 .main-menu ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     list-style: none;
+    align-items: center;
 }
 
 .main-menu a {
@@ -64,25 +74,36 @@ main {
     display: flex;
     justify-content: center;
     overflow: hidden;
-    position: relative;
     margin: 50px auto;
-    width: 50vw;
+    width: 40vw;
 }
 
 #contain-menu img {
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .contain-1 {
     display: flex;
     flex-direction: column;
     position: relative;
-    padding: 10px;
+    padding: 5px 5px;
 }
 
-.contain-1 h2 {
+.contain-2 {
+    /*display: flex;
+    /*flex-direction: column;*/
+    position: relative;
+    padding: 10px 0px;
+}
+
+.contain-1 h2, .contain-2 h2 {
     position: absolute;
     color: #ffff;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* PIE DE PÁGINA */
@@ -95,14 +116,6 @@ main {
 
 .footer a {
     margin: 10px;
-}
-
-.text-main {
-    font-family: 'Tangerine', serif;
-    font-size: 80px;
-    text-shadow: 2px 2px 2px #aaa;
-    color: white;
-    text-align: center;
 }
 
 .formulario {
