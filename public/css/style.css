@@ -116,25 +116,25 @@ body, main {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    height: 500px;
+    height: 850px;
     margin: 90px 0px;
 }
 
 .contain-text-img-2 img {
     border-radius: 10px;
-    width: 40vw;
+    width: 30vw;
     object-fit: cover;
 }
 
 .contain-text-img img {
     border-radius: 10px;
-    width: 40vw;
+    width: 30vw;
     object-fit: cover;
 }
 
 .contain-text {  
     padding: 0px 40px;
-    width: 40vw;
+    width: 30vw;
 }
 
 .contain-text h1, h2 {
