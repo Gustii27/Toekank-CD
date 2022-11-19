@@ -75,6 +75,9 @@ body, main {
 #contain-menu img {
     overflow: hidden;
     border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+    height: 500px;
 }
 
 .contain {
@@ -99,6 +102,7 @@ body, main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 30px;
 }
 
 /* CONTACTS */
@@ -159,6 +163,8 @@ body, main {
     border-radius: 10px;
     background-color: #877B80;
     text-align: center;
+    margin: 0px auto;
+    width: 200px;
 }
 
 .button-contacts a {
@@ -166,7 +172,6 @@ body, main {
     font-family: "Marcellus", serif;
     font-size: 25px;
     color: #000;
-    
 }
 
 /* PIE DE PÁGINA */
