@@ -152,6 +152,23 @@ body, main {
     text-align: justify;
     font-size: 18px;
 }
+
+/* BOTON CONTACTS EN ABOUT*/
+
+.button-contacts {
+    border-radius: 10px;
+    background-color: #877B80;
+    text-align: center;
+}
+
+.button-contacts a {
+    text-decoration: none;
+    font-family: "Marcellus", serif;
+    font-size: 25px;
+    color: #000;
+    
+}
+
 /* PIE DE PÁGINA */
 
 .footer {
