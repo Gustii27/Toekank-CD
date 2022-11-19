@@ -199,8 +199,9 @@ body, main {
     border-radius: 10px;
 }
 
-.gallery-img h4, p {
+.gallery-img h4, h6 {
     margin: 5px auto;
+    font-weight: 100;
 }
 .section-gallery h2 {
     font-family: "Marcellus", serif;
@@ -215,10 +216,11 @@ body, main {
     font-weight: 100;
 }
 
-.section-gallery p {
+.section-gallery h6 {
     font-size: 18px;
     text-align: center;
 }
+
 /* PIE DE PÁGINA */
 
 .footer {
