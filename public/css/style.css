@@ -7,14 +7,10 @@ body {
     margin: 0px;
 }
 
-body {
+body, main {
     font-family: 'Barlow', sans-serif;    
     background-color: #E6D1D9;
-}
-
-main {
     margin: auto;
-    /*padding: 0px 10px;*/
 }
 
 .background-index {
@@ -72,9 +68,6 @@ main {
 /* MENU CON FOTOS */
 
 #contain-menu {
-    /*display: flex;
-    justify-content: center;
-    overflow: hidden;*/
     margin: 50px auto;
     width: 40vw;
 }
@@ -85,21 +78,16 @@ main {
 }
 
 .contain {
-    display: flex;
-    /*flex-direction: column;*/    
+    display: flex; 
     flex-flow: nowrap;
 }
 
 .contain-1 {
-    /*display: flex;
-    flex-direction: column;*/
     position: relative;
     padding: 5px 5px;
 }
 
 .contain-2 {
-    /*display: flex;
-    /*flex-direction: column;*/
     position: relative;
     padding: 10px 0px;
 }
@@ -113,6 +101,57 @@ main {
     transform: translate(-50%, -50%);
 }
 
+/* CONTACTS */
+
+.contain-text-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin: 90px 0px;
+}
+
+.contain-text-img-2 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    margin: 90px 0px;
+}
+
+.contain-text-img-2 img {
+    border-radius: 10px;
+    width: 40vw;
+    object-fit: cover;
+}
+
+.contain-text-img img {
+    border-radius: 10px;
+    width: 40vw;
+    object-fit: cover;
+}
+
+.contain-text {  
+    padding: 0px 40px;
+    width: 40vw;
+}
+
+.contain-text h1, h2 {
+    font-family: "marcellus", serif;
+    font-size: 60px;
+    text-align: center;
+    margin: 35px 0px;
+}
+
+.contain-text h2, h3 {
+    font-size: 25px;
+}
+
+.contain-text p {
+    text-align: justify;
+    font-size: 18px;
+}
 /* PIE DE PÁGINA */
 
 .footer {
