@@ -221,6 +221,13 @@ body, main {
     text-align: center;
 }
 
+.section-text {
+    font-family: "Marcellus", serif;
+    font-size: 45px;
+    text-align: center;
+    width: 30vw;
+}
+
 /* PIE DE PÁGINA */
 
 .footer {
