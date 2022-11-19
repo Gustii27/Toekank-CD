@@ -13,6 +13,8 @@ body, main {
     margin: auto;
 }
 
+/* INDEX */
+
 .background-index {
     background-image: url(../img/fondo.jpeg);
     background-attachment: fixed;
@@ -65,7 +67,7 @@ body, main {
     font-family: 'Marcellus', serif;
 }
 
-/* MENU CON FOTOS */
+/* MENU CON FOTOS INDEX */
 
 #contain-menu {
     margin: 50px auto;
@@ -105,7 +107,7 @@ body, main {
     font-size: 30px;
 }
 
-/* CONTACTS */
+/* ABOUT */
 
 .contain-text-img {
     display: flex;
@@ -146,6 +148,7 @@ body, main {
     font-size: 60px;
     text-align: center;
     margin: 35px 0px;
+    font-weight: 100;
 }
 
 .contain-text h2, h3 {
@@ -174,6 +177,41 @@ body, main {
     color: #000;
 }
 
+/* GALLERY */
+
+.flex-gallery {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.gallery-img {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+}
+
+.gallery-img img {
+    border-radius: 10px;
+}
+
+.gallery-img h2, p {
+    margin: 5px auto;
+}
+.section-gallery h1 {
+    font-family: "Marcellus", serif;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.section-gallery h2 {
+    font-size: 25px;
+}
+
+.section-gallery p {
+    font-size: 18px;
+    text-align: center;
+}
 /* PIE DE PÁGINA */
 
 .footer {
