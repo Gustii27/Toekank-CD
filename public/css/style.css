@@ -260,11 +260,14 @@ body, main {
     font-size: 14px; 
     height: 50px;
     width: 300px;
+    border: 1px;
+    border-style: groove;
 }
 
 .formulario div {
     display: flex;
     justify-content: center;
+    margin: 30px auto;
 }
 
 .formulario div button {
@@ -273,6 +276,11 @@ body, main {
     font-size: 16px;
     width: 200px;
     height: 30px;
+    background-color: #877B80;
+    color: #ffff;
+    border-radius: 5px;
+    border-style: solid;
+    border: 1px;
 }
 
 .formulario div input {
@@ -281,4 +289,9 @@ body, main {
     font-size: 16px;
     width: 200px;
     height: 30px;
+    background-color: #877B80;
+    color: #ffff;
+    border-radius: 5px;
+    border-style: solid;
+    border: 1px;
 }
