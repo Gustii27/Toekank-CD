@@ -143,7 +143,7 @@ body, main {
     width: 30vw;
 }
 
-.contain-text h1, h2 {
+.contain-text h2, h5 {
     font-family: "marcellus", serif;
     font-size: 60px;
     text-align: center;
@@ -151,11 +151,16 @@ body, main {
     font-weight: 100;
 }
 
-.contain-text h2, h3 {
+.contain-text h5 {
     font-size: 25px;
 }
 
 .contain-text p {
+    font-size: 18px;
+    text-align: center;
+}
+
+.format-span {
     text-align: justify;
     font-size: 18px;
 }
@@ -166,7 +171,7 @@ body, main {
     border-radius: 10px;
     background-color: #877B80;
     text-align: center;
-    margin: 0px auto;
+    margin: 20px auto;
     width: 200px;
 }
 
@@ -194,18 +199,20 @@ body, main {
     border-radius: 10px;
 }
 
-.gallery-img h2, p {
+.gallery-img h4, p {
     margin: 5px auto;
 }
-.section-gallery h1 {
+.section-gallery h2 {
     font-family: "Marcellus", serif;
-    font-size: 40px;
+    font-size: 60px;
     text-align: center;
     font-weight: 100;
 }
 
-.section-gallery h2 {
+.section-gallery h4 {
     font-size: 25px;
+    text-align: center;
+    font-weight: 100;
 }
 
 .section-gallery p {
