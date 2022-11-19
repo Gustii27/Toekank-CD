@@ -76,7 +76,7 @@ body, main {
     overflow: hidden;
     border-radius: 10px;
     object-fit: cover;
-    object-position: center;
+    object-position: top;
     height: 500px;
 }
 
