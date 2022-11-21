@@ -218,10 +218,22 @@ body, main {
 }
 
 .section-text {
+    width: 45vw;
+    margin: 0 auto;
+}
+
+.section-text h4 {
     font-family: "Marcellus", serif;
     font-size: 45px;
-    text-align: center;
-    width: 30vw;
+}
+
+.principal-img {
+    width: 50vw;
+    margin: 50px auto;
+}
+
+.principal-img img {
+    border-radius: 10px;
 }
 
 /* PIE DE PÁGINA */
