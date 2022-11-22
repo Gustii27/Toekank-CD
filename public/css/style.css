@@ -160,6 +160,8 @@ body, main {
 .contain-text {  
     padding: 0px 40px;
     width: 30vw;
+    height: inherit;
+    overflow: hidden;
 }
 
 .contain-text h2, h5 {
