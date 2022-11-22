@@ -82,6 +82,8 @@ body, main {
     justify-content: space-evenly;
     list-style: none;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .main-menu a {
