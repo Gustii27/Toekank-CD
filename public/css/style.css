@@ -73,10 +73,6 @@ body, main {
 
 /* MENUS */
 
-.main-menu {
-    display: grid;
-}
-
 .main-menu ul {
     display: flex;
     justify-content: space-evenly;
