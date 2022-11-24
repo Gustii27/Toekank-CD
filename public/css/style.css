@@ -279,7 +279,6 @@ body, main {
     display: flex;
     justify-content: center;
     background-color: #877B80;
-    position: static;
 }
 
 .footer a {
