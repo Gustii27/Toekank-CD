@@ -120,6 +120,7 @@ body {
 
 .contain-1 img, .contain-2 img, .contain-3 img {
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .contain-1 h2, .contain-2 h2, .contain-3 h2 {
