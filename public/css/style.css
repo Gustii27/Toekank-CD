@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* FONTS */
@@ -30,17 +32,21 @@
     text-align: center;
 }
 
-html,
-body {
-    margin: 0px;
-}
-
-body, main {
+main {
+    grid-area: contain;
     font-family: 'Barlow', sans-serif;    
     background-color: #E6D1D9;
-    margin: auto;
 }
 
+body {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 105px 1fr 54px;
+    grid-template-areas: 
+        "header header header header header"
+        "contain contain contain contain contain"
+        "footer footer footer footer footer";
+}
 /*-----------------------------------------------------------------*/
 
 /* INDEX */
@@ -67,6 +73,7 @@ body, main {
 }
 
 .main-header {
+    grid-area: header;
     background-color: #3A3537;
 }
 
@@ -283,7 +290,9 @@ body, main {
 /*-----------------------------------------------------------------*/
 
 /* PIE DE PÁGINA */
-
+footer {
+    grid-area: footer;
+}
 .footer {
     display: flex;
     justify-content: center;
