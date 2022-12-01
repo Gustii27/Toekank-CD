@@ -98,6 +98,12 @@ body {
     font-size: 18px;
     font-family: 'Marcellus', serif;
 }
+.main-menu a:hover {
+    text-decoration: underline;
+}
+.main-menu img:hover {
+    scale: 1.05;
+}
 
 /* MENU CON FOTOS INDEX */
 
