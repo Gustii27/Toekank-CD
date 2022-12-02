@@ -91,7 +91,9 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.main-menu > .fa-bars-filter {
+    display: none;
+}
 .main-menu a {
     color: white;
     text-decoration: none;
