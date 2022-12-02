@@ -40,7 +40,7 @@ main {
 body {
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 0.2fr 1fr 0.2fr;
     grid-template-rows: 105px 1fr 54px;
     grid-template-areas: 
         "header header header header header"
@@ -144,12 +144,12 @@ body {
 
 #grid-area {
     display: grid;
-    min-height: 100vh;
-    grid-template-columns: repeat(2, 30vw);
-    grid-template-rows: repeat(3, auto);
+    margin: 50px 0;
+    grid-template-columns: repeat(2, 35vw);
+    grid-template-rows: repeat(2, auto);
     grid-template-areas:
-        "grid-img grid-text"
-        "grid-img-2 grid-text-2";
+        "grid-area-1 grid-area-1"
+        "grid-area-2 grid-area-2";
     grid-row-gap: 50px;
     grid-column-gap: 30px;
     justify-content: center;
@@ -157,30 +157,33 @@ body {
     align-items: center;
 }
 article.grid-text {
-    grid-area: grid-text;
-    width: 30vw;
+    grid-area: grid-area-2;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: inherit;
     text-align: justify;
 }
-.grid-img {
-    grid-area: grid-img;
+.grid-img-1 {
+    grid-area: grid-area-1;
+    grid-column: 1/2;
+    grid-row: 1/2;
 }
-.grid-img img {
+.grid-img-1 > img {
     border-radius: 10px;
-    width: 30vw;
 }
-.grid-img-2 img {
+.grid-img-2 > img {
     border-radius: 10px;
-    width: 30vw;
 }
 article.grid-text-2 {
-    grid-area: grid-text-2;
-    grid-column: 1;
-    width: 30vw;
+    grid-area: grid-area-2;
+    grid-column: 1/2;
+    grid-row: 2/3;
     text-align: justify;
 }
 .grid-img-2 {
-    grid-area: grid-img-2;
-    grid-column: 2;
+    grid-area: grid-area-1;
+    grid-column: 2/3;
+    grid-row: 2/3;
 }
 .format-span {
     text-align: justify;
