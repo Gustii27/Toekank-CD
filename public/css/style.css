@@ -83,7 +83,7 @@ body {
 
 /* MENUS */
 
-.main-menu ul {
+.main-menu > ul {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
