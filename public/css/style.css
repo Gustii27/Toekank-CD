@@ -83,7 +83,7 @@ body {
 
 /* MENUS */
 
-.main-menu > ul {
+.nav-bar > ul {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
@@ -91,19 +91,19 @@ body {
     margin: 0;
     padding: 0;
 }
-.main-menu > .fa-bars-filter {
+.nav-bar > .fa-bars-filter {
     display: none;
 }
-.main-menu a {
+.nav-bar a {
     color: white;
     text-decoration: none;
     font-size: 18px;
     font-family: 'Marcellus', serif;
 }
-.main-menu a:hover {
+.nav-bar a:hover {
     text-decoration: underline;
 }
-.main-menu img:hover {
+.nav-bar img:hover {
     scale: 1.05;
 }
 
