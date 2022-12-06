@@ -91,7 +91,7 @@ body {
     margin: 0;
     padding: 0;
 }
-.main-header > .fa-bars-sort {
+.nav-bar > .fa-bars-sort {
     display: none;
 }
 .nav-bar a {

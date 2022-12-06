@@ -2,4 +2,7 @@
     .nav-bar > ul {
         flex-direction: column;
     }
+    .nav-bar> .fa-bars-sort {
+        display: block;
+    }
 }
