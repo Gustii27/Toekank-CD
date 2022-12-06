@@ -43,9 +43,9 @@ body {
     grid-template-columns: 0.2fr 1fr 0.2fr;
     grid-template-rows: 105px 1fr 54px;
     grid-template-areas: 
-        "header header header header header"
-        "contain contain contain contain contain"
-        "footer footer footer footer footer";
+        "header header header"
+        "contain contain contain"
+        "footer footer footer";
 }
 /*-----------------------------------------------------------------*/
 
@@ -91,7 +91,7 @@ body {
     margin: 0;
     padding: 0;
 }
-.nav-bar > .fa-bars-filter {
+.main-header > .fa-bars-sort {
     display: none;
 }
 .nav-bar a {
