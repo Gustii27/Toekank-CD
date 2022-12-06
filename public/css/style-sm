@@ -1,5 +1,5 @@
 @media (max-width: 480px){
-    .nav-bar ul {
+    .nav-bar > ul {
         flex-direction: column;
     }
 }
