@@ -2,7 +2,6 @@
     .nav-bar > ul {
         flex-direction: column;
         display: none;
-        
     }
     .nav-bar> .fa-bars{
         display: block;
