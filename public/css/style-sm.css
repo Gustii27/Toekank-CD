@@ -1,12 +1,20 @@
 @media (max-width: 480px){
+    .nav-bar {
+        justify-content: space-between;
+    }
     .nav-bar > ul {
+        position: fixed;
+        display: flex;
         flex-direction: column;
-        display: none;
+        background-color: #3A3537;
+        width: 50vw;
+        height: 100vh;
     }
     .nav-bar> .fa-bars{
         display: block;
         font-size: 30px;
         color: #E6D1D9;
         text-align: center;
+        padding: 20px;
     }
 }
