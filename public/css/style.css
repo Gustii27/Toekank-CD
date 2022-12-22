@@ -49,6 +49,28 @@ body {
 }
 /*-----------------------------------------------------------------*/
 
+/* MEDIA QUERIES */
+@media (max-width: 756px){
+    body {
+        grid-template-rows: 56px 1fr 50px;
+    }
+    .contain-menu {
+        display: flex !important;
+        flex-direction: column;
+    }
+    .contain-1 h2, .contain-2 h2, .contain-3 h2 {
+        font-size: 22px !important;
+        transform: none !important;
+        position: inherit !important;
+    }
+    .text-background {
+        font-size: 60px !important;
+        left: 0% !important;
+    }
+}
+
+
+
 /* INDEX */
 
 .background-index {
@@ -82,7 +104,11 @@ body {
 }
 
 /* MENUS */
-.nav-bar {
+
+/* MENU BOOTSTRAP */
+
+
+/*.nav-bar {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -107,7 +133,7 @@ body {
 }
 .nav-bar img:hover {
     scale: 1.05;
-}
+}*/
 
 /* MENU CON FOTOS INDEX */
 
