@@ -50,9 +50,9 @@ body {
 /*-----------------------------------------------------------------*/
 
 /* MEDIA QUERIES */
-@media (max-width: 756px){
+@media (max-width: 576px){
     body {
-        grid-template-rows: 56px 1fr 50px;
+        grid-template-rows: 49px 1fr 50px;
     }
     .contain-menu {
         display: flex !important;
@@ -68,8 +68,25 @@ body {
         left: 0% !important;
     }
 }
+@media (min-width:576px) {
+    body {
+        grid-template-rows: 49px 1fr 50px;
+    }    
+}
+@media (min-width:992px) {
+    .container-fluid{
 
-
+    }
+    .offcanvas{
+        position: relative;
+    }
+    .navbar-nav{
+        flex-direction: row;
+    }
+    .navbar-toggler{
+        display: none;
+    }
+}
 
 /* INDEX */
 
