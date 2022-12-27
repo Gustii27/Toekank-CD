@@ -116,6 +116,14 @@ body {
         height: 50vh;
         background-attachment: unset;
     }
+    .flex {
+        display: flex !important;
+        flex-direction: column;
+        margin: 20px !important;
+    }
+    .grid-img-1, .grid-img-2 {
+        width: 50vw !important;
+    }
 }
 
 /* MENU CON FOTOS INDEX */
