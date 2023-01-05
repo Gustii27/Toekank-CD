@@ -41,7 +41,7 @@ body {
     margin: 0;
     display: grid;
     grid-template-columns: 0.2fr 1fr 0.2fr;
-    grid-template-rows: 105px 1fr 54px;
+    grid-template-rows: 108px 1fr 50px;
     grid-template-areas: 
         "header header header"
         "contain contain contain"
@@ -81,32 +81,92 @@ body {
     text-align: center;
 }
 
-/* MENUS */
-.nav-bar {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+/* BOOTSTRAP MENU */
+
+.navbar {
+    background-color: #3A3537 !important;
 }
-.nav-bar ul {
-    display: contents;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.nav-bar > .fa-bars {
-    display: none;
-}
-.nav-bar a {
+.nav-link {
     color: white;
-    text-decoration: none;
+    font-family: "Marcellus", serif;
     font-size: 18px;
-    font-family: 'Marcellus', serif;
 }
-.nav-bar a:hover {
+.nav-link:hover {
     text-decoration: underline;
 }
-.nav-bar img:hover {
+.img-fluid:hover {
     scale: 1.05;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 576px) {
+    .contain-1 h2, .contain-2 h2, .contain-3 h2 {
+        font-size: 25px !important;
+    }
+    .flex-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gallery-img {
+        width: 60vw !important;
+    }
+    .text-contacts {
+        width: 60vw !important;
+    }
+    .text-gw h4 {
+        font-size: 30px !important;
+    }
+    .flex-gw {
+        flex-direction: column;
+        align-items: center;
+        margin: auto !important;
+    }
+    .flex-1, .flex-2 {
+        width: 60vw !important;
+    }
+    .format-span {
+        margin-bottom: 20px;
+    }
+    .flex-1 h4, .flex-2 h4 {
+        margin: 10px;
+    }
+}
+@media (max-width: 767px) {
+    .contain-menu{
+        display: flex !important;
+        flex-direction: column;
+    }
+    .text-background {
+        font-size: 50px;
+    }
+    .background-index {
+        height: 50vh;
+        background-attachment: unset;
+    }
+    .flex {
+        display: flex !important;
+        flex-direction: column;
+        margin: 20px !important;
+    }
+    .grid-img-1, .grid-img-2 {
+        width: 50vw !important;
+    }
+    .section-text {
+        margin: 20px auto !important;
+    }
+    .section-text h4 {
+        font-size: 30px !important;
+    }
+    .section-gallery h2 {
+        font-size: 45px !important;
+    }
+    .span-gw {
+        width: 60vw !important;
+        margin: auto !important;
+    }
+    .format-span-gw-2 {
+        font-size: 25px !important;
+    }
 }
 
 /* MENU CON FOTOS INDEX */
