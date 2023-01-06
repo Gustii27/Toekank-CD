@@ -1,0 +1,19 @@
+.background-index {
+    background-image: url(../img/fondo.jpeg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 90vh;
+    position: relative;
+    .text-background {
+        font-family: 'Tangerine', serif;
+        font-size: 80px;
+        text-shadow: 2px 2px 2px #aaa;
+        color: #3A3537;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        margin: 0;
+    } 
+}

@@ -1,102 +1,14 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-}
-
-/* FONTS */
-
-* h2 {
-    font-family: "Marcellus", serif;
-    font-size: 45px;
-    font-weight: 100;
-    text-align: center;
-}
-
-* h5, h4 {
-    font-family: "Marcellus", serif;
-    font-size: 25px;
-    font-weight: 100;
-    text-align: center;
-}
-
-* h6 {
-    font-family: "Marcellus", serif;
-    font-size: 18px;
-    text-align: center;
-    font-weight: 100;
-}
-
-* p {
-    font-size: 18px;
-    text-align: center;
-}
-
-main {
-    grid-area: contain;
-    font-family: 'Barlow', sans-serif;    
-    background-color: #E6D1D9;
-}
-
-body {
-    margin: 0;
-    display: grid;
-    grid-template-columns: 0.2fr 1fr 0.2fr;
-    grid-template-rows: 108px 1fr 50px;
-    grid-template-areas: 
-        "header header header"
-        "contain contain contain"
-        "footer footer footer";
-}
-/*-----------------------------------------------------------------*/
-
-/* INDEX */
-
-.background-index {
-    background-image: url(../img/fondo.jpeg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 90vh;
-    position: relative;
-}
-
-.text-background {
-    font-family: 'Tangerine', serif;
-    font-size: 80px;
-    text-shadow: 2px 2px 2px #aaa;
-    color: #3A3537;
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    margin: 0;
-}
-
-.main-header {
-    grid-area: header;
-    background-color: #3A3537;
-}
-
-.main-header-top-bar {
-    text-align: center;
-}
-
-/* BOOTSTRAP MENU */
-
-.navbar {
-    background-color: #3A3537 !important;
-}
-.nav-link {
-    color: white;
-    font-family: "Marcellus", serif;
-    font-size: 18px;
-}
-.nav-link:hover {
-    text-decoration: underline;
-}
-.img-fluid:hover {
-    scale: 1.05;
-}
+@import "reset";
+@import "fonts";
+@import "global";
+@import "navbar";
+@import "headerIndex";
+@import "menuIndex";
+@import "menuAbout";
+@import "buttonContacts";
+@import "menuGallery";
+@import "menuGoodWorks";
+@import "footer";
 
 /* MEDIA QUERIES */
 @media (max-width: 576px) {
@@ -124,11 +36,15 @@ body {
     .flex-1, .flex-2 {
         width: 60vw !important;
     }
-    .format-span {
+    span {
         margin-bottom: 20px;
+        font-size: 14px;
     }
     .flex-1 h4, .flex-2 h4 {
         margin: 10px;
+    }
+    .navbar-toggler-icon {
+        margin: 0;
     }
 }
 @media (max-width: 767px) {
@@ -169,213 +85,7 @@ body {
     }
 }
 
-/* MENU CON FOTOS INDEX */
-
-.contain-menu {
-    margin: 50px auto;
-    width: 40vw;
-    display: grid;
-    grid-gap: 10px;
-}
-
-.contain-1 {
-    grid-row: 2;
-    grid-column: 1/3;
-    position: relative;
-}
-
-.contain-2, .contain-3 {
-    position: relative;
-}
-
-.contain-1 img, .contain-2 img, .contain-3 img {
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.contain-1 h2, .contain-2 h2, .contain-3 h2 {
-    position: absolute;
-    color: #ffff;
-    margin: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
-}
-
-/*-----------------------------------------------------------------*/
-/* ABOUT */
-
-#grid-area {
-    display: grid;
-    margin: 50px 0;
-    grid-template-columns: repeat(2, 35vw);
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas:
-        "grid-area-1 grid-area-1"
-        "grid-area-2 grid-area-2";
-    grid-row-gap: 50px;
-    grid-column-gap: 30px;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-}
-article.grid-text {
-    grid-area: grid-area-2;
-    grid-column: 2/3;
-    grid-row: 1/2;
-    width: inherit;
-    text-align: justify;
-}
-.grid-img-1 {
-    grid-area: grid-area-1;
-    grid-column: 1/2;
-    grid-row: 1/2;
-}
-.grid-img-1 > img {
-    border-radius: 10px;
-}
-.grid-img-2 > img {
-    border-radius: 10px;
-}
-article.grid-text-2 {
-    grid-area: grid-area-2;
-    grid-column: 1/2;
-    grid-row: 2/3;
-    text-align: justify;
-}
-.grid-img-2 {
-    grid-area: grid-area-1;
-    grid-column: 2/3;
-    grid-row: 2/3;
-}
-.format-span {
-    text-align: justify;
-    font-size: 18px;
-}
-
-/* BOTON CONTACTS EN ABOUT*/
-
-.button-contacts {
-    border-radius: 5px;
-    background-color: #877B80;
-    text-align: center;
-    margin: 40px auto;
-    width: 200px;
-    padding: 10px;
-}
-
-.button-contacts a {
-    text-decoration: none;
-    font-family: "Marcellus", serif;
-    font-size: 25px;
-    color: #000;
-}
-
-/*-----------------------------------------------------------------*/
-/* GALLERY */
-
-.flex-gallery {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.gallery-img {
-    display: flex;
-    flex-direction: column;
-    width: 30vw;
-}
-
-.gallery-img img {
-    border-radius: 10px;
-}
-
-.gallery-img h4, h6 {
-    margin: 5px auto;
-}
-.section-gallery h2 {
-    font-size: 60px;
-}
-
-.section-text {
-    width: 45vw;
-    margin: 0 auto;
-}
-
-.section-text h4 {
-    font-family: "Marcellus", serif;
-    font-size: 45px;
-}
-
-.principal-img {
-    width: 50vw;
-    margin: 50px auto;
-}
-
-.principal-img img {
-    border-radius: 10px;
-}
-
-/*-----------------------------------------------------------------*/
-
-/* GOOD WORKS */
-
-.text-gw {
-    text-align: center;
-}
-.text-gw h4 {
-    font-size: 45px;
-}
-
-.format-span-gw {
-    font-family: "Marcellus", serif;
-    text-align: justify;
-    font-size: 25px;
-    margin: 20px auto;
-}
-
-.span-gw {
-    text-align: center;
-    width: 40vw;
-    margin: 100px auto;
-}
-.format-span-gw-2 {
-    font-family: "Marcellus", serif;
-    font-size: 45px;
-}
-
-.flex-gw {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 50px auto;
-}
-
-.flex-1, .flex-2 {
-    display: flex;
-    flex-direction: column;
-    width: 30vw;
-}
-
-.flex-1 img, .flex-2 img {
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-/*-----------------------------------------------------------------*/
-
 /* PIE DE PÁGINA */
-footer {
-    grid-area: footer;
-}
-.footer {
-    display: flex;
-    justify-content: center;
-    background-color: #877B80;
-}
-
-.footer a {
-    margin: 10px;
-}
 
 /*-----------------------------------------------------------------*/
 
