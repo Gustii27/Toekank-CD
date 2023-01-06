@@ -1,5 +1,4 @@
 #grid-area {
-    display: grid;
     margin: 50px 0;
     grid-template-columns: repeat(2, 35vw);
     grid-template-rows: repeat(2, auto);
@@ -18,11 +17,28 @@
         grid-row: 1/2;
         width: inherit;
         text-align: justify;
+
+        @media (max-width: 767px) {
+            h2 {
+                font-size: 30px;
+            }
+            h5 {
+                font-size: 22px;
+            }
+            span, p {
+                font-size: 16px;
+            }
+        }
     }
     .grid-img-1 {
         grid-area: grid-area-1;
         grid-column: 1/2;
         grid-row: 1/2;
+        
+        @media (max-width: 767px) {
+            width: 50vw;
+        }
+
         > img {
             border-radius: 10px;
         }
@@ -32,11 +48,28 @@
         grid-column: 1/2;
         grid-row: 2/3;
         text-align: justify;
+
+        @media (max-width: 767px) {
+            h2 {
+                font-size: 30px;
+            }
+            h5 {
+                font-size: 22px;
+            }
+            span, p {
+                font-size: 16px;
+            }
+        }
     }
     .grid-img-2 {
         grid-area: grid-area-1;
         grid-column: 2/3;
         grid-row: 2/3;
+
+        @media (max-width: 767px) {
+            width: 50vw;
+        }
+
         > img {
             border-radius: 10px;
         }

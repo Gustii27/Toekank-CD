@@ -6,14 +6,21 @@
     background-position: center center;
     height: 90vh;
     position: relative;
+    @media (max-width: 767px) {
+        height: 50vh;
+        background-attachment: unset;
+    }
     .text-background {
-        font-family: 'Tangerine', serif;
+        font-family: $font-subtitle;
         font-size: 80px;
         text-shadow: 2px 2px 2px #aaa;
-        color: #3A3537;
+        color: $background-nav;
         position: absolute;
         top: 50%;
         left: 10%;
         margin: 0;
+        @media (max-width: 767px) {
+            font-size: 50px
+        }
     } 
 }

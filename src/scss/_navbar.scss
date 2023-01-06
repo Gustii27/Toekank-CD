@@ -1,14 +1,14 @@
 .main-header {
     grid-area: header;
-    background-color: #3A3537;
+    background-color: $background-nav;
     .navbar {
-        background-color: #3A3537 !important;
+        background-color: $background-nav !important;
         .img-fluid:hover {
             scale: 1.05;
         }
         .nav-link {
             color: white;
-            font-family: "Marcellus", serif;
+            font-family: $font-title;
             font-size: 18px;
 
             &:hover {

@@ -2,9 +2,13 @@
     text-align: center;
     h4 {
         font-size: 45px;
+
+        @media (max-width: 767px) {
+            font-size: 30px;
+        }
     }
     .format-span-gw {
-        font-family: "Marcellus", serif;
+        font-family: $font-title;
         text-align: justify;
         font-size: 25px;
         margin: 20px auto;
@@ -14,19 +18,43 @@
     text-align: center;
     width: 40vw;
     margin: 100px auto;
+
+    @media (max-width: 767px) {
+        width: 60vw;
+        margin: 60px auto
+    }
     .format-span-gw-2 {
-        font-family: "Marcellus", serif;
+        font-family: $font-title;
         font-size: 45px;
+
+        @media (max-width: 767px) {
+            font-size: 25px;
+        }
     }
 }
 .flex-gw {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 50px auto;
+    margin: 20px auto;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+        align-items: center;
+    }
     .flex-1, .flex-2 {
         display: flex;
         flex-direction: column;
         width: 30vw;
+
+        @media (max-width: 767px) {
+            width: 60vw;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 576px) {
+            span {
+                font-size: 16px;
+            }
+        }
         img {
             border-radius: 10px;
             object-fit: cover;
