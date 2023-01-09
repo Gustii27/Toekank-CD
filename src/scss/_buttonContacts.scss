@@ -2,7 +2,7 @@
     @extend %button;
 
     &:hover {
-        background: linear-gradient(90deg, #877B80, #8F7F94);
+        background: linear-gradient(90deg, $background-button, $background-button-gradient);
     }
     a {
         text-decoration: none;

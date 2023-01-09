@@ -40,14 +40,14 @@
         @extend %button_form;
 
         &:hover {
-            background: radial-gradient(ellipse,#877B80, #8F7F94);
+            background: radial-gradient(ellipse,$background-button, $background-button-gradient);
         }
     }
     input {
         @extend %input;
 
         &:hover {
-            background: radial-gradient(ellipse,#877B80, #8F7F94);
+            background: radial-gradient(ellipse,$background-button, $background-button-gradient);
         }
     }   
 }
