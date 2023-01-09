@@ -2,9 +2,7 @@ footer {
     grid-area: footer;
 
     .footer {
-        display: flex;
-        justify-content: center;
-        background-color: #877B80;
+        background-color: $background-button;
             a   {
                 margin: 10px;
             }
