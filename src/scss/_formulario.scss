@@ -1,5 +1,4 @@
 .text-contacts {
-    text-align: center;
     margin: 50px auto;
     width: 30vw;
 
@@ -18,8 +17,6 @@
 }
 
 .formulario label {
-    display: grid;
-    justify-content: center;
     margin: 10px;
     font-size: 18px;
     line-height: 50px;
@@ -34,35 +31,23 @@
 }
 
 .formulario div {
-    display: flex;
-    justify-content: center;
     margin: 30px auto;
 
     @media (max-width: 576px) {
         max-width: 60vw;
     }
     button {
-        margin: 10px;
-        font-family: 'Marcellus', serif;
-        font-size: 16px;
-        width: 200px;
-        height: 45px;
-        background-color: #877B80;
-        color: #ffff;
-        border-radius: 5px;
-        border-style: solid;
-        border: 1px;
+        @extend %button_form;
+
+        &:hover {
+            background: radial-gradient(ellipse,#877B80, #8F7F94);
+        }
     }
     input {
-        margin: 10px;
-        font-family: 'Marcellus', serif;
-        font-size: 16px;
-        width: 200px;
-        height: 45px;
-        background-color: #877B80;
-        color: #ffff;
-        border-radius: 5px;
-        border-style: solid;
-        border: 1px;
-        }   
+        @extend %input;
+
+        &:hover {
+            background: radial-gradient(ellipse,#877B80, #8F7F94);
+        }
+    }   
 }

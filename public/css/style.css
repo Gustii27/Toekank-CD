@@ -1,4 +1,35 @@
-/*@import "extend";*/
+.button-contacts {
+  border-radius: 5px;
+  background-color: #877B80;
+  text-align: center;
+  margin: 40px auto;
+  width: 200px;
+  padding: 10px; }
+
+.formulario div input {
+  margin: 10px;
+  font-family: 'Marcellus', serif;
+  font-size: 16px;
+  width: 200px;
+  height: 45px;
+  background-color: #877B80;
+  color: #ffff;
+  border-radius: 5px;
+  border-style: solid;
+  border: 1px; }
+
+.formulario div button {
+  margin: 10px;
+  font-family: 'Marcellus', serif;
+  font-size: 16px;
+  width: 200px;
+  height: 45px;
+  background-color: #877B80;
+  color: #ffff;
+  border-radius: 5px;
+  border-style: solid;
+  border: 1px; }
+
 /*@import "mixin";*/
 * {
   box-sizing: border-box;
@@ -8,13 +39,15 @@
   font-family: "Marcellus", serif;
   font-size: 45px;
   font-weight: 100;
-  text-align: center; }
+  text-align: center;
+  margin: 10px 0 10px 0; }
 
 * h5, h4 {
   font-family: "Marcellus", serif;
   font-size: 25px;
   font-weight: 100;
-  text-align: center; }
+  text-align: center;
+  margin: 10px 0 10px 0; }
 
 * h6 {
   font-family: "Marcellus", serif;
@@ -55,6 +88,9 @@ body {
       font-size: 18px; }
       .main-header .navbar .nav-link:hover {
         text-decoration: underline; }
+        @media (max-width: 767px) {
+          .main-header .navbar .nav-link:hover:hover {
+            text-decoration: underline; } }
 
 .background-index {
   background-image: url(../img/fondo.jpeg);
@@ -116,6 +152,8 @@ body {
   justify-content: center;
   justify-items: center;
   align-items: center; }
+  #grid-area h2 {
+    margin: 0 0 10px 0; }
   #grid-area article.grid-text {
     grid-area: grid-area-2;
     grid-column: 2/3;
@@ -160,42 +198,36 @@ body {
     #grid-area .grid-img-2 > img {
       border-radius: 10px; }
 
-.button-contacts {
-  border-radius: 5px;
-  background-color: #877B80;
-  text-align: center;
-  margin: 40px auto;
-  width: 200px;
-  padding: 10px; }
-  .button-contacts a {
-    text-decoration: none;
-    font-family: "Marcellus", serif;
-    font-size: 25px;
-    color: #000; }
+.button-contacts:hover {
+  background: linear-gradient(90deg, #877B80, #8F7F94); }
+
+.button-contacts a {
+  text-decoration: none;
+  font-family: "Marcellus", serif;
+  font-size: 25px;
+  color: #000; }
 
 .section-gallery h2 {
-  font-size: 60px; }
+  font-size: 45px; }
   @media (max-width: 767px) {
     .section-gallery h2 {
-      font-size: 40px; } }
+      font-size: 35px; } }
 
-.section-gallery .flex-gallery {
-  justify-content: space-evenly; }
-  @media (max-width: 767px) {
-    .section-gallery .flex-gallery {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; } }
-  .section-gallery .flex-gallery .gallery-img {
+@media (max-width: 767px) {
+  .section-gallery .flex-gallery {
     flex-direction: column;
-    width: 30vw; }
-    @media (max-width: 767px) {
-      .section-gallery .flex-gallery .gallery-img {
-        width: 60vw; } }
-    .section-gallery .flex-gallery .gallery-img img {
-      border-radius: 10px; }
-    .section-gallery .flex-gallery .gallery-img h4, .section-gallery .flex-gallery .gallery-img h6 {
-      margin: 5px auto; }
+    justify-content: center;
+    align-items: center; } }
+
+.section-gallery .flex-gallery .gallery-img {
+  width: 30vw; }
+  @media (max-width: 767px) {
+    .section-gallery .flex-gallery .gallery-img {
+      width: 60vw; } }
+  .section-gallery .flex-gallery .gallery-img img {
+    border-radius: 10px; }
+  .section-gallery .flex-gallery .gallery-img h4, .section-gallery .flex-gallery .gallery-img h6 {
+    margin: 5px auto; }
 
 .section-text {
   width: 45vw;
@@ -280,7 +312,6 @@ footer {
       margin: 10px; }
 
 .text-contacts {
-  text-align: center;
   margin: 50px auto;
   width: 30vw; }
   @media (max-width: 767px) {
@@ -295,8 +326,6 @@ footer {
       font-size: 30px; } }
 
 .formulario label {
-  display: grid;
-  justify-content: center;
   margin: 10px;
   font-size: 18px;
   line-height: 50px; }
@@ -309,31 +338,11 @@ footer {
     border-style: groove; }
 
 .formulario div {
-  display: flex;
-  justify-content: center;
   margin: 30px auto; }
   @media (max-width: 576px) {
     .formulario div {
       max-width: 60vw; } }
-  .formulario div button {
-    margin: 10px;
-    font-family: 'Marcellus', serif;
-    font-size: 16px;
-    width: 200px;
-    height: 45px;
-    background-color: #877B80;
-    color: #ffff;
-    border-radius: 5px;
-    border-style: solid;
-    border: 1px; }
-  .formulario div input {
-    margin: 10px;
-    font-family: 'Marcellus', serif;
-    font-size: 16px;
-    width: 200px;
-    height: 45px;
-    background-color: #877B80;
-    color: #ffff;
-    border-radius: 5px;
-    border-style: solid;
-    border: 1px; }
+  .formulario div button:hover {
+    background: radial-gradient(ellipse, #877B80, #8F7F94); }
+  .formulario div input:hover {
+    background: radial-gradient(ellipse, #877B80, #8F7F94); }
