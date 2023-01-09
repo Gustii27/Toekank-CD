@@ -1,0 +1,26 @@
+.background-index {
+    background-image: url(../img/fondo.jpeg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 90vh;
+    position: relative;
+    @media (max-width: 767px) {
+        height: 50vh;
+        background-attachment: unset;
+    }
+    .text-background {
+        font-family: $font-subtitle;
+        font-size: 80px;
+        text-shadow: 2px 2px 2px #aaa;
+        color: $background-nav;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        margin: 0;
+        @media (max-width: 767px) {
+            font-size: 50px
+        }
+    } 
+}

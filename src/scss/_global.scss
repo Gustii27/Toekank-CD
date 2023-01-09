@@ -1,0 +1,16 @@
+main {
+    grid-area: contain;
+    font-family: $font-gral;    
+    background-color: $background;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 0.2fr;
+    grid-template-rows: 108px 1fr 50px;
+    grid-template-areas: 
+        "header header header"
+        "contain contain contain"
+        "footer footer footer";
+}

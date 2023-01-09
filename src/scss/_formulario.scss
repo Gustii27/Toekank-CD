@@ -1,0 +1,53 @@
+.text-contacts {
+    margin: 50px auto;
+    width: 30vw;
+
+    @media (max-width: 767px) {
+        width: 60vw;
+        margin: 30px auto;
+    }
+}
+
+.h5-contacts {
+    font-size: 45px;
+
+    @media (max-width: 576px) {
+        font-size: 30px ;
+    }
+}
+
+.formulario label {
+    margin: 10px;
+    font-size: 18px;
+    line-height: 50px;
+    .input {
+        font-family: 'Marcellus', serif;
+        font-size: 14px; 
+        height: 50px;
+        width: 300px;
+        border: 1px;
+        border-style: groove;
+    }
+}
+
+.formulario div {
+    margin: 30px auto;
+
+    @media (max-width: 576px) {
+        max-width: 60vw;
+    }
+    button {
+        @extend %button_form;
+
+        &:hover {
+            background: radial-gradient(ellipse,$background-button, $background-button-gradient);
+        }
+    }
+    input {
+        @extend %input;
+
+        &:hover {
+            background: radial-gradient(ellipse,$background-button, $background-button-gradient);
+        }
+    }   
+}
