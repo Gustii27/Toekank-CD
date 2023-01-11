@@ -30,7 +30,6 @@
   border-style: solid;
   border: 1px; }
 
-/*@import "mixin";*/
 * {
   box-sizing: border-box;
   padding: 0; }
@@ -301,8 +300,6 @@ body {
 footer {
   grid-area: footer; }
   footer .footer {
-    display: flex;
-    justify-content: center;
     background-color: #877B80; }
     footer .footer a {
       margin: 10px; }
