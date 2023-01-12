@@ -1,6 +1,15 @@
 article {
     width: 60vw;
     margin: auto;
+    @media (max-width: 767px) {
+        width: 80vw;
+        h4 {
+            font-size: 22px;
+        }
+        h5 {
+            font-size: 20px;
+        }
+    }
 }
 .contain-menu {
     margin: 50px auto;

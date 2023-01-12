@@ -119,6 +119,13 @@ body {
 article {
   width: 60vw;
   margin: auto; }
+  @media (max-width: 767px) {
+    article {
+      width: 80vw; }
+      article h4 {
+        font-size: 22px; }
+      article h5 {
+        font-size: 20px; } }
 
 .contain-menu {
   margin: 50px auto;
@@ -231,7 +238,8 @@ article {
     .section-gallery .flex-gallery .gallery-img {
       width: 60vw; } }
   .section-gallery .flex-gallery .gallery-img img {
-    border-radius: 10px; }
+    border-radius: 10px;
+    object-fit: cover; }
   .section-gallery .flex-gallery .gallery-img h4, .section-gallery .flex-gallery .gallery-img h6 {
     margin: 5px auto; }
 
