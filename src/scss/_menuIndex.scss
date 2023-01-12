@@ -2,6 +2,10 @@
     margin: 50px auto;
     width: 40vw;
     grid-gap: 10px;
+
+    @media (max-width: 767px) {
+        width: 60vw;
+    }
     .contain-1 {
         grid-row: 2;
         grid-column: 1/3;

@@ -41,7 +41,7 @@
         width: 30vw;
 
         @media (max-width: 767px) {
-            width: 60vw;
+            width: 75vw;
             gap: 10px;
             margin-top: 20px;
         }
@@ -49,6 +49,7 @@
         @media (max-width: 576px) {
             span {
                 font-size: 16px;
+                text-align: center;
             }
         }
         img {
