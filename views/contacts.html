@@ -58,27 +58,27 @@
             <span>¡Cuéntame sobre el día de tu evento usando el siguiente formulario! Mi parte favorita de lo que hago es la relación que desarrollo con mis clientes, ¡así que pregunte a continuación y pronto comenzaremos a hablar de todo lo relacionado con el día de su evento!</span>
         </div>
         <form class="formulario" action="" method="post">
-            <label class="d-grid justify-content-center">Nombre:
-                <input type="text" name="nombre" required placeholder="Ingrese su nombre">
-            </label>
-            
-            <label class="d-grid justify-content-center">Apellido:
-                <input type="text" name="apellido" required placeholder="Ingrese su apellido">
-            </label>
-            
-            <label class="d-grid justify-content-center">e-mail:
-                <input type="email" name="email" required placeholder="Ingrese su e-mail">
-            </label>
-           
-            <label class="d-grid justify-content-center">Mensaje:
-                <input type="text" name="mensaje" placeholder="Ingrese su mensaje">
-            </label>
-            <div class="d-flex justify-content-center">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Ingrese su nombre">
+                <label for="floatingInput">Ingrese su Nombre</label>
+              </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Ingrese su nombre">
+                <label for="floatingInput">Ingrese su Apellido</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Ingrese su e-mail</label>
+              </div>
+            <div class="form-floating">
+                <textarea class="text-msg form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">Ingrese su Mensaje</label>
+            </div>
+            <div class="botones d-flex justify-content-center">
                 <button type="submit" name="enviar">Enviar</button>
            
                 <input type="reset" value="Borrar">
             </div>
-            
         </form>
     </main>
 

@@ -6,7 +6,7 @@
   width: 200px;
   padding: 10px; }
 
-.formulario div input {
+.botones input {
   margin: 10px;
   font-family: 'Marcellus', serif;
   font-size: 16px;
@@ -18,7 +18,7 @@
   border-style: solid;
   border: 1px; }
 
-.formulario div button {
+.botones button {
   margin: 10px;
   font-family: 'Marcellus', serif;
   font-size: 16px;
@@ -310,7 +310,7 @@ footer {
 
 .text-contacts {
   margin: 50px auto;
-  width: 30vw; }
+  width: 40vw; }
   @media (max-width: 767px) {
     .text-contacts {
       width: 60vw;
@@ -322,24 +322,18 @@ footer {
     .h5-contacts {
       font-size: 30px; } }
 
-.formulario label {
-  margin: 10px;
-  font-size: 18px;
-  line-height: 50px; }
-  .formulario label .input {
-    font-family: 'Marcellus', serif;
-    font-size: 14px;
-    height: 50px;
-    width: 300px;
-    border: 1px;
-    border-style: groove; }
+.form-floating {
+  width: 60vw;
+  margin: auto; }
+  .form-floating .text-msg {
+    height: 200px; }
 
-.formulario div {
+.botones {
   margin: 30px auto; }
   @media (max-width: 576px) {
-    .formulario div {
+    .botones {
       max-width: 60vw; } }
-  .formulario div button:hover {
+  .botones button:hover {
     background: radial-gradient(ellipse, #877B80, #8F7F94); }
-  .formulario div input:hover {
+  .botones input:hover {
     background: radial-gradient(ellipse, #877B80, #8F7F94); }
