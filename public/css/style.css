@@ -116,15 +116,15 @@ body {
       .background-index .text-background {
         font-size: 50px; } }
 
-article {
+.index-art {
   width: 60vw;
   margin: auto; }
   @media (max-width: 767px) {
-    article {
+    .index-art {
       width: 80vw; }
-      article h4 {
+      .index-art h4 {
         font-size: 22px; }
-      article h5 {
+      .index-art h5 {
         font-size: 20px; } }
 
 .contain-menu {
@@ -143,6 +143,9 @@ article {
   .contain-menu img {
     border-radius: 10px;
     object-fit: cover; }
+    .contain-menu img:hover {
+      box-shadow: 3px 3px 5px #877B80;
+      scale: 1.02; }
   .contain-menu h2 {
     position: absolute;
     color: #ffff;
@@ -312,6 +315,8 @@ article {
     .flex-gw .flex-1 img, .flex-gw .flex-2 img {
       border-radius: 10px;
       object-fit: cover; }
+      .flex-gw .flex-1 img:hover, .flex-gw .flex-2 img:hover {
+        filter: sepia(30%); }
 
 footer {
   grid-area: footer; }
