@@ -1,0 +1,25 @@
+.floating-icon {
+  background-color: $background-button-gradient;
+  border-radius: 50%;
+  border-color: $background-button-gradient;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  
+  i {
+    font-size: 36px;
+    color: $background-nav;
+  }
+
+  &:hover {
+    background-color: $background;
+    border-color: $background;
+  }
+}

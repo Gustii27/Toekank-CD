@@ -354,3 +354,31 @@ footer {
     background: radial-gradient(ellipse, #877B80, #8F7F94); }
   .botones input:hover {
     background: radial-gradient(ellipse, #877B80, #8F7F94); }
+
+.floating-icon {
+  background-color: #8F7F94;
+  border-radius: 50%;
+  border-color: #8F7F94;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer; }
+  .floating-icon i {
+    font-size: 36px;
+    color: #3A3537; }
+  .floating-icon:hover {
+    background-color: #E6D1D9;
+    border-color: #E6D1D9; }
+
+.btn-primary {
+  background-color: #877B80;
+  border-color: #877B80; }
+  .btn-primary:hover {
+    background: linear-gradient(90deg, #877B80, #8F7F94);
+    border-color: #877B80; }
