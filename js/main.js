@@ -7,10 +7,10 @@ let carrito = [];
 function agregarAlCarrito() {
     let producto = {
         id:1,
-        nombre: "producto 1",
+        nombre: "Pack de Fotos",
         precio: 10
     };
 carrito.push (producto);
-console.log("Producto agregado al carrito:", producto);
+alert("Producto agregado al carrito:", producto);
 }
 
