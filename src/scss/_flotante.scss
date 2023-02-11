@@ -23,3 +23,23 @@
     border-color: $background;
   }
 }
+
+.btn-primary {
+  --bs-btn-active-color: $background;
+  --bs-btn-active-bg: $background-button;
+  --bs-btn-active-border-color: $background-button;
+  
+  --bs-btn-bg: $background-button;
+  --bs-btn-border-color: $background-button;
+  --bs-btn-hover-color: $background;
+  --bs-btn-hover-bg: $background-button;
+  --bs-btn-hover-border-color: $background-button;
+
+  --bs-btn-disabled-bg: $background-button;
+  --bs-btn-disabled-border-color: $background-button;
+  --bs-btn-disabled-color: $background;
+}
+
+.btn {
+  transition: none;
+}
