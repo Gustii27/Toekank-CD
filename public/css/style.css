@@ -377,24 +377,19 @@ footer {
     border-color: #E6D1D9; }
 
 .btn-primary {
-  --bs-btn-active-color: $background;
-  --bs-btn-active-bg: $background-button;
-  --bs-btn-active-border-color: $background-button;
-  --bs-btn-bg: $background-button;
-  --bs-btn-border-color: $background-button;
-  --bs-btn-hover-color: $background;
-  --bs-btn-hover-bg: $background-button;
-  --bs-btn-hover-border-color: $background-button;
-  --bs-btn-disabled-bg: $background-button;
-  --bs-btn-disabled-border-color: $background-button;
-  --bs-btn-disabled-color: $background; }
+  --bs-btn-active-bg: $background;
+  --bs-btn-active-border-color: $background; }
 
-.btn {
-  transition: none; }
+@media (max-width: 767px) {
+  h2 {
+    font-size: 35px; } }
 
-.btn-primary {
-  background-color: #877B80;
-  border-color: #877B80; }
-  .btn-primary:hover {
-    background: linear-gradient(90deg, #877B80, #8F7F94);
-    border-color: #877B80; }
+@media (max-width: 567px) {
+  h2 {
+    font-size: 25px; } }
+
+.button-contacts {
+  color: white; }
+
+.row {
+  margin: auto; }

@@ -1,10 +1,15 @@
-.btn-primary {
-    
-    background-color: $background-button;
-    border-color: $background-button;
+h2 {
+    @media (max-width: 767px) {
+        font-size: 35px;;
+    } 
 
-    &:hover {
-        background: linear-gradient(90deg, $background-button, $background-button-gradient);
-        border-color: $background-button;
-    }
+    @media (max-width: 567px) {
+        font-size: 25px;;
+    } 
+}
+.button-contacts {
+    color: white;
+}
+.row {
+    margin: auto;
 }
