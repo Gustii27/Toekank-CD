@@ -393,3 +393,7 @@ footer {
 
 .row {
   margin: auto; }
+
+.altura-img {
+  height: 400px !important;
+  object-fit: contain; }
