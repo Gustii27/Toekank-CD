@@ -397,3 +397,6 @@ footer {
 .altura-img {
   height: 400px !important;
   object-fit: contain; }
+
+.chck-price {
+  margin: 10px auto; }
