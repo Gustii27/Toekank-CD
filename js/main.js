@@ -1,4 +1,4 @@
-const stockProductos = [
+/*const stockProductos = [
     {
         id:1,
         desc: "Packs de Fotos Chico (50 fotografías)",
@@ -85,4 +85,83 @@ function calculoCuotas(stockProductos, id1, id2, consultaCuotas){
 
 let resultadoCuotas = calculoCuotas(stockProductos, id1, id2, consultaCuotas);
 
-console.log(`El precio total de los productos seleccionados es de ${resultado} en ${consultaCuotas} cuotas de ${resultadoCuotas} pesos`);
+console.log(`El precio total de los productos seleccionados es de ${resultado} en ${consultaCuotas} cuotas de ${resultadoCuotas} pesos`);*/
+
+// FORMULARIO INGRESO A UN ARRAY DE NUEVOS CLIENTES
+
+// Creo un array de objetos vacio para que se complete con una función a medida que el usuario ingresa datos.
+/*const nuevosUsuarios = [{
+}];
+
+// Solicito al usuario cargar la información solicitada.
+let userName = prompt("Ingrese su nombre");
+let userApellido = prompt("ingrese su apellido");
+let userEmail = prompt("Ingrese su correo electrónico");
+let userMsg = parseInt(prompt("Ingrese su mensaje"));
+
+
+// A traves de una función hago que al momento de encontrar un id genere un incremento automático.
+function idUser(id){
+    nuevosUsuarios.some(encontrado =>{
+        encontrado.id === 1;
+    return id++;    
+    })
+}*/
+
+// Creo una variable global para que me sume solo los id.
+/*let idCount = 0;
+
+// Solicito al usuario cargar la información solicitada.
+let userName = (prompt("Ingrese su nombre"));
+let userApellido = (prompt("ingrese su apellido"));
+let userMail = (prompt("Ingrese su correo electrónico"));
+let userMsg = (prompt("Ingrese su mensaje"));
+
+// Creo una clase constructora para que me vaya creando el registro de usuarios ingresados.
+class Usuario {
+    constructor(nombre, apellido, mail, msg) {
+        this.id = ++idCount;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.mail = mail;
+        this.msg = msg;
+    }
+}
+
+// Asigno los valores ingresados por el usuario en un objeto para almacenar.
+const usuario1 = new Usuario(userName, userApellido, userMail, userMsg, idCount)
+
+console.log(usuario1);*/
+
+// ALTERNATIVA UTILIZANDO ARRAY 
+
+// Crear un array vacio para almacenar los usuarios
+let usuarios = [];
+
+// Variable global para llevar la cuenta del ultimo ID utilizado
+let ultimoId = 0;
+
+// Defino la clase Usuario
+class Usuario {
+    constructor(nombre, apellido, mail, msg, id) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.mail = mail;
+        this.msg = msg;
+        this.id = id;
+    }
+}
+
+// Solicitar al usuario cargar la informacion solicitada.
+let userName = (prompt("Ingrese su nombre"));
+let userApellido = (prompt("Ingrese su apellido"));
+let userMail = (prompt("Ingrese su correo electrónico"));
+let userMsg = (prompt("Ingrese su mensaje"));
+
+// Crear una instancia del objeto Usuario y asignarle un ID único
+const usuario1 = new Usuario(userName, userApellido, userMail, userMsg, ++ultimoId);
+
+// Agregar el nuevo usuario al array usuarios
+usuarios.push(usuario1);
+
+console.log(usuarios);
