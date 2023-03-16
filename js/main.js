@@ -1,34 +1,74 @@
-/*const stockProductos = [
+const carrito = [];
+
+const stockProductos = [
     {
         id:1,
-        desc: "Packs de Fotos Chico (50 fotografías)",
+        titulo: "Packs de Fotos Chico (50 fotografías)",
         precio: 2000 
     },
     {
         id:2,
-        desc: "Packs de Fotos Mediano (100 fotografías)",
+        titulo: "Packs de Fotos Mediano (100 fotografías)",
         precio: 3900 
     },
     {
         id:3,
-        desc: "Packs de Fotos Grande (150 fotografías)",
+        titulo: "Packs de Fotos Grande (150 fotografías)",
         precio: 5000 
     },
     {
         id:4,
-        desc: "Album de Fotos",
+        titulo: "Album de Fotos",
         precio: 6000 
     },
     {
         id:5,
-        desc: "Edicion de Photoshop",
+        titulo: "Edicion de Photoshop",
         precio: 2500 
     },
-]
+];
+
+const modalBody = document.querySelector(".modal-body"); // traigo el modal donde quiero pintar los productos.
+const agregarProductos = document.querySelectorAll(".btn-add-prod");
+
+stockProductos.forEach((producto) =>{ // itero el array de objetos   
+    const div = document.createElement("div") // creo un div donde se van a estar agregando los productos
+    div.classList.add("container-fluid") // le asigno una clase al div
+    div.innerHTML = `
+    <h5 class = "card-title">${producto.titulo}</h5>
+    <p class = "card-text">Precio $${producto.precio}</p>
+    <button type="button" id="eliminarProducto" onClick="eliminarProd(${producto.id})"><i class="fa-solid fa-trash"></i></button>` // inserto el codigo HTML de lo que contendrá el div.
+    
+    modalBody.appendChild(div); //inserto el div en el modalBody
+
+    /*const botonEliminarProd= document.querySelector("#eliminarProducto"); // creo evento del boton para eliminar.
+    botonEliminarProd.addEventListener("click", eliminarProd); // le asigno la funcion de escuchar para cuando se haga click.*/
+
+    /*const btnAgregarProd = document.querySelector(".btn-add-prod");
+    btnAgregarProd.addEventListener("click", ()=>{
+        agregarAlCarrito(producto.id);
+    })*/
+})
+
+const agregarAlCarrito = (prodId) => {
+    const item = stockProductos.find((prod) => prod.id === prodId)
+    carrito.push(item);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 //--- Suma de productos agregados al carrito ---//
 
-let id1 = parseInt(prompt("Seleccione un ID del 1 al 5"));
+/*let id1 = parseInt(prompt("Seleccione un ID del 1 al 5"));
 let id2 = parseInt(prompt("Seleccione otro ID del 1 al 5"));
 
 // Se valida con un loop WHILE que los IDs ingresados esten en stockProductos
@@ -136,7 +176,7 @@ console.log(usuario1);*/
 // ALTERNATIVA UTILIZANDO ARRAY 
 
 // Crear un array vacio para almacenar los usuarios
-let usuarios = [];
+/*let usuarios = [];
 
 // Variable global para llevar la cuenta del ultimo ID utilizado
 let ultimoId = 0;
@@ -164,4 +204,4 @@ const usuario1 = new Usuario(userName, userApellido, userMail, userMsg, ++ultimo
 // Agregar el nuevo usuario al array usuarios
 usuarios.push(usuario1);
 
-console.log(usuarios);
+console.log(usuarios);*/
