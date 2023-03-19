@@ -1,61 +1,80 @@
-const carrito = [];
-
 const stockProductos = [
     {
         id:1,
         titulo: "Packs de Fotos Chico (50 fotografías)",
-        precio: 2000 
+        precio: 2000,
+        cantidad: 1
     },
     {
         id:2,
         titulo: "Packs de Fotos Mediano (100 fotografías)",
-        precio: 3900 
+        precio: 3900,
+        cantidad: 1 
     },
     {
         id:3,
         titulo: "Packs de Fotos Grande (150 fotografías)",
-        precio: 5000 
+        precio: 5000,
+        cantidad: 1 
     },
     {
         id:4,
         titulo: "Album de Fotos",
-        precio: 6000 
+        precio: 6000,
+        cantidad: 1 
     },
     {
         id:5,
         titulo: "Edicion de Photoshop",
-        precio: 2500 
+        precio: 2500,
+        cantidad: 1 
     },
 ];
 
-const modalBody = document.querySelector(".modal-body"); // traigo el modal donde quiero pintar los productos.
-const agregarProductos = document.querySelectorAll(".btn-add-prod");
+const contenedorDeProductos = document.querySelector(".modal-body"); // traigo el modal donde quiero pintar los productos.
 
-stockProductos.forEach((producto) =>{ // itero el array de objetos   
-    const div = document.createElement("div") // creo un div donde se van a estar agregando los productos
-    div.classList.add("container-fluid") // le asigno una clase al div
-    div.innerHTML = `
-    <h5 class = "card-title">${producto.titulo}</h5>
-    <p class = "card-text">Precio $${producto.precio}</p>
-    <button type="button" id="eliminarProducto" onClick="eliminarProd(${producto.id})"><i class="fa-solid fa-trash"></i></button>` // inserto el codigo HTML de lo que contendrá el div.
+function mostrarProductos() {
+    stockProductos.forEach((producto) =>{ // itero el array de objetos   
+        const div = document.createElement("div") // creo un div donde se van a estar agregando los productos
+        div.classList.add("container-fluid") // le asigno una clase al div
+        div.innerHTML = `
+        <h5 class = "card-title">${producto.titulo}</h5>
+        <p class = "card-text">Precio $${producto.precio}</p>
+        <button class="eliminarProducto data-id=${producto.id}"><i class="fa-solid fa-trash"></i></button>` // inserto el codigo HTML de lo que contendrá el div.
+        
+        contenedorDeProductos.appendChild(div); //inserto el div en el modalBody
+
+        const botonEliminarProd= document.querySelector(".eliminarProducto"); 
+        botonEliminarProd.addEventListener("click", function(){
+            const id = parseInt(this.dataset.id);
+            eliminarProd(id);
+        });
+    })
     
-    modalBody.appendChild(div); //inserto el div en el modalBody
-
-    /*const botonEliminarProd= document.querySelector("#eliminarProducto"); // creo evento del boton para eliminar.
-    botonEliminarProd.addEventListener("click", eliminarProd); // le asigno la funcion de escuchar para cuando se haga click.*/
-
-    /*const btnAgregarProd = document.querySelector(".btn-add-prod");
-    btnAgregarProd.addEventListener("click", ()=>{
-        agregarAlCarrito(producto.id);
-    })*/
-})
-
-const agregarAlCarrito = (prodId) => {
-    const item = stockProductos.find((prod) => prod.id === prodId)
-    carrito.push(item);
+    const btnAgregarProd = document.querySelectorAll(".btn-add-prod"); // Traigo el boton
+    btnAgregarProd.forEach(btn => btn.addEventListener("click", (e) => {
+        btnAgregarProd(e.target.id);
+    })); // Recorro los botones y ejecuto la funcion agregar al carrito.
 }
 
+const carrito = []; // Creo array de productos vacio.
 
+function agregarAlCarrito(id) {
+    const existeProd = carrito.some(prod => prod.id === parseInt(id)); // Recorro el array de productos buscando coincidencia. Saber si esta o no el producto.
+
+    if (existeProd) { // si el producto existe, entonces me agrega uno mas.
+        const prodEncontrado = carrito.find(prod => prod.id === parseInt(id));
+        prodEncontrado.cantidad++;
+    } else {
+        const prodEncontrado = stockProductos.find(prod => prod.id === parseInt(id)); // Si no esta el producto, lo agrega.
+        carrito.push(prodEncontrado);
+    }
+}
+
+function eliminarProd(id){
+    const index = carrito.findIndex(prod => prod.id === parseInt(id));
+    carrito.splice(index, 1);
+}
 
 
 
