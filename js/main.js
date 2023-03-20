@@ -44,7 +44,7 @@ function mostrarProductos() {
         
         contenedorDeProductos.appendChild(div); //inserto el div en el modalBody
 
-        const botonEliminarProd= document.querySelector(".eliminarProducto"); 
+        const botonEliminarProd = document.querySelector(".eliminarProducto"); 
         botonEliminarProd.addEventListener("click", function(){
             const id = parseInt(this.dataset.id);
             eliminarProd(id);
@@ -56,7 +56,7 @@ function mostrarProductos() {
         btnAgregarProd(e.target.id);
     })); // Recorro los botones y ejecuto la funcion agregar al carrito.
 }
-
+mostrarProductos();
 const carrito = []; // Creo array de productos vacio.
 
 function agregarAlCarrito(id) {
