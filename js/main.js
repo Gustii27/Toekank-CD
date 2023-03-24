@@ -1,82 +1,78 @@
 const stockProductos = [
     {
-        id:1,
+        id: 1,
         titulo: "Packs de Fotos Chico (50 fotografías)",
+        descripcion: "¿Te gustaría rememorar los mejores momentos? Hay disponibilidad de Packs de 50 imágenes, 100 imágenes y 150 imágenes.",
+        img: "../public/img/packs-fotos-1.jpg",
         precio: 2000,
         cantidad: 1
     },
     {
-        id:2,
+        id: 2,
         titulo: "Packs de Fotos Mediano (100 fotografías)",
+        descripcion: "¿Te gustaría rememorar los mejores momentos? Hay disponibilidad de Packs de 50 imágenes, 100 imágenes y 150 imágenes.",
+        img: "../public/img/packs-fotos-1.jpg",
         precio: 3900,
         cantidad: 1 
     },
     {
-        id:3,
+        id: 3,
         titulo: "Packs de Fotos Grande (150 fotografías)",
+        descripcion: "¿Te gustaría rememorar los mejores momentos? Hay disponibilidad de Packs de 50 imágenes, 100 imágenes y 150 imágenes.",
+        img: "../public/img/packs-fotos-1.jpg",
         precio: 5000,
         cantidad: 1 
     },
     {
-        id:4,
+        id: 4,
         titulo: "Album de Fotos",
+        descripcion: "Los mejores Albums de Fotos con un diseño personalizado, con el cual podrá mostrarle a todos sus seres queridos sus momentos más preciados.",
+        img: "../public/img/album-fotos-2.jpg",
         precio: 6000,
         cantidad: 1 
     },
     {
-        id:5,
+        id: 5,
         titulo: "Edicion de Photoshop",
+        descripcion: "¿Desea sobresalir entre sus queridos adquiriendo fotos de una mayor calidez, mayor calidad y contraste?. Tiene a disposición este adicional de Edición Fotografica.",
+        img: "../public/img/chanel.jpg",
         precio: 2500,
         cantidad: 1 
     },
 ];
 
-const contenedorDeProductos = document.querySelector(".modal-body"); // traigo el modal donde quiero pintar los productos.
+// Traigo al DOM los documentos del HTML
+const tarjetasProd = document.querySelector(".tarjetasProd");
+const ventanaCarrito = document.querySelector(".modal-body");
+const btnAgregarDeTarjeta = document.querySelector(".btn-add-prod");
 
-function mostrarProductos() {
-    stockProductos.forEach((producto) =>{ // itero el array de objetos   
-        const div = document.createElement("div") // creo un div donde se van a estar agregando los productos
-        div.classList.add("container-fluid") // le asigno una clase al div
-        div.innerHTML = `
-        <h5 class = "card-title">${producto.titulo}</h5>
-        <p class = "card-text">Precio $${producto.precio}</p>
-        <button class="eliminarProducto data-id=${producto.id}"><i class="fa-solid fa-trash"></i></button>` // inserto el codigo HTML de lo que contendrá el div.
-        
-        contenedorDeProductos.appendChild(div); //inserto el div en el modalBody
+// Creo dinamicamente las vistas de las tarjetas.
 
-        const botonEliminarProd = document.querySelector(".eliminarProducto"); 
-        botonEliminarProd.addEventListener("click", function(){
-            const id = parseInt(this.dataset.id);
-            eliminarProd(id);
+function mostrarProductos (){
+    tarjetasProd.innerHTML = "";
+
+    stockProductos.forEach((producto) => {
+        const divTarjetas = document.createElement("div");
+        divTarjetas.className = "col";
+        divTarjetas.innerHTML = `
+        <div class="card-body" id=${producto.id}>
+            <img src="${producto.img}" class="card-img-top img-fluid altura-img" alt="${producto.titulo}">
+            <h5 class="card-title">${producto.titulo}</h5>
+            <p class="card-text">${producto.descripcion}</p>
+            <label><input type="radio" class="form-check-input mt-0"> ${producto.titulo} Precio: $${producto.precio}</label><br>
+            <label><input type="radio" class="form-check-input mt-0"> ${producto.titulo} Precio: $${producto.precio}.</label><br>
+            <label><input type="radio" class="form-check-input mt-0"> ${producto.titulo} Precio: $${producto.precio}.</label><br>
+        <button class="button-contacts btn-add-prod">Agregar al Carrito</button>
+        </div>`;
+
+        divTarjetas.querySelector(".btn-add-prod").addEventListener("click", () => {
+            agregarAlCarrito(producto.id);
         });
-    })
-    
-    const btnAgregarProd = document.querySelectorAll(".btn-add-prod"); // Traigo el boton
-    btnAgregarProd.forEach(btn => btn.addEventListener("click", (e) => {
-        btnAgregarProd(e.target.id);
-    })); // Recorro los botones y ejecuto la funcion agregar al carrito.
+
+        tarjetasProd.append(divTarjetas);
+    });
 }
 mostrarProductos();
-const carrito = []; // Creo array de productos vacio.
-
-function agregarAlCarrito(id) {
-    const existeProd = carrito.some(prod => prod.id === parseInt(id)); // Recorro el array de productos buscando coincidencia. Saber si esta o no el producto.
-
-    if (existeProd) { // si el producto existe, entonces me agrega uno mas.
-        const prodEncontrado = carrito.find(prod => prod.id === parseInt(id));
-        prodEncontrado.cantidad++;
-    } else {
-        const prodEncontrado = stockProductos.find(prod => prod.id === parseInt(id)); // Si no esta el producto, lo agrega.
-        carrito.push(prodEncontrado);
-    }
-}
-
-function eliminarProd(id){
-    const index = carrito.findIndex(prod => prod.id === parseInt(id));
-    carrito.splice(index, 1);
-}
-
-
 
 
 
