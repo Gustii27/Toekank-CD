@@ -5,6 +5,7 @@ const stockProductos = [
         descripcion: "¿Te gustaría rememorar los mejores momentos? Hay disponibilidad de Packs de 50 imágenes, 100 imágenes y 150 imágenes.",
         img: "../public/img/packs-fotos-1.jpg",
         precio: 2000,
+        radio: -1,
         cantidad: 1
     },
     {
@@ -13,6 +14,7 @@ const stockProductos = [
         descripcion: "¿Te gustaría rememorar los mejores momentos? Hay disponibilidad de Packs de 50 imágenes, 100 imágenes y 150 imágenes.",
         img: "../public/img/packs-fotos-1.jpg",
         precio: 3900,
+        radio: -2,
         cantidad: 1 
     },
     {
@@ -21,6 +23,7 @@ const stockProductos = [
         descripcion: "¿Te gustaría rememorar los mejores momentos? Hay disponibilidad de Packs de 50 imágenes, 100 imágenes y 150 imágenes.",
         img: "../public/img/packs-fotos-1.jpg",
         precio: 5000,
+        radio: -3,
         cantidad: 1 
     },
     {
@@ -44,7 +47,6 @@ const stockProductos = [
 // Traigo al DOM los documentos del HTML
 const tarjetasProd = document.querySelector(".tarjetasProd");
 const ventanaCarrito = document.querySelector(".modal-body");
-const btnAgregarDeTarjeta = document.querySelector(".btn-add-prod");
 
 // Creo dinamicamente las vistas de las tarjetas.
 
@@ -55,15 +57,28 @@ function mostrarProductos (){
         const divTarjetas = document.createElement("div");
         divTarjetas.className = "col";
         divTarjetas.innerHTML = `
-        <div class="card-body" id=${producto.id}>
-            <img src="${producto.img}" class="card-img-top img-fluid altura-img" alt="${producto.titulo}">
-            <h5 class="card-title">${producto.titulo}</h5>
-            <p class="card-text">${producto.descripcion}</p>
-            <label><input type="radio" class="form-check-input mt-0"> ${producto.titulo} Precio: $${producto.precio}</label><br>
-            <label><input type="radio" class="form-check-input mt-0"> ${producto.titulo} Precio: $${producto.precio}.</label><br>
-            <label><input type="radio" class="form-check-input mt-0"> ${producto.titulo} Precio: $${producto.precio}.</label><br>
-        <button class="button-contacts btn-add-prod">Agregar al Carrito</button>
-        </div>`;
+        <div class="card" id=${producto.id}>
+            <div class= "card-body">
+                <img src="${producto.img}" class="card-img-top img-fluid altura-img" alt="${producto.titulo}">
+                <h5 class="card-title">${producto.titulo}</h5>
+                <p class="card-text">${producto.descripcion}</p>
+                ${producto.radio ? `
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="opciones-${producto.id}" id="${producto.radio}-1">
+                    <label class="form-check-label" for="${producto.radio}-1">${producto.titulo} Precio: $${producto.precio}</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="opciones-${producto.id}" id="${producto.radio}-2">
+                    <label class="form-check-label" for="${producto.radio}-2">${producto.titulo} Precio: $${producto.precio}</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="opciones-${producto.id}" id="${producto.radio}-3">
+                    <label class="form-check-label" for="${producto.radio}-3">${producto.titulo} Precio: $${producto.precio}</label>
+                </div>
+                ` : ''}
+                <button class="button-contacts btn-add-prod">Agregar al Carrito</button>
+            </div>
+        </div>`
 
         divTarjetas.querySelector(".btn-add-prod").addEventListener("click", () => {
             agregarAlCarrito(producto.id);
@@ -74,9 +89,53 @@ function mostrarProductos (){
 }
 mostrarProductos();
 
+// Creo un carrito vacio, donde se van a ir agregando los productos.
+const carrito = [];
 
+// Creo la función de agregar al carrito con el boton que está estático en el HTML.
+function agregarAlCarrito (prodId){
+    // Verifico si ya está agregado el producto al carrito.
+    const existeEnCarrito = carrito.some(prod => prod.id === prodId);
+    // Creo la condición en base al valor true o false que devuelve existeEnCarrito.
+    if (existeEnCarrito){
+        // Si el resultado es true, entonces busco el producto y le sumo 1 cantidad más.
+        const productoEncontrado = carrito.find(prod => prod.id === prodId);
+        productoEncontrado.cantidad++;
+    } else {
+        // Si el resultado es false, entonces me busca el producto y lo agrega al array de productos.
+        const productoEncontrado = stockProductos.find(prod => prod.id === prodId);
+        carrito.push(productoEncontrado);
+    }
+    actualizarCarrito();
+}
 
+function eliminarDelCarrito (prodId) {
+    const item = carrito.find(prod => prod.id === prodId) // Busco el producto en el carrito.
+    const index = carrito.indexOf (item) // Tomo el valor de "item" y obtengo la posición del producto en el carrito.
+    carrito.splice(index, 1); // Una vez encontrado, lo elimino.
+    
+    actualizarCarrito(); // Vuelvo actualizar la pantalla.
+}
 
+function actualizarCarrito(){
+    ventanaCarrito.innerHTML = "";
+
+    carrito.forEach((prod) => {
+        const div = document.createElement("div");
+        div.className = "d-flex flex-row mb-3 justify-content-around";
+        div.innerHTML = `
+        <p>${prod.titulo}</p>
+        <p>Precio: $${prod.precio}
+        <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
+        <button class="botonEliminar" id="${prod.id}"><i class="fa-solid fa-trash"></button>`
+
+        div.querySelector(".botonEliminar").addEventListener("click", () => {
+            eliminarDelCarrito()
+        })
+
+        ventanaCarrito.appendChild(div);
+    })
+}
 
 
 
