@@ -47,6 +47,8 @@ const stockProductos = [
 // Traigo al DOM los documentos del HTML
 const tarjetasProd = document.querySelector(".tarjetasProd");
 const ventanaCarrito = document.querySelector(".modal-body");
+const contadorCarrito = document.getElementById("contadorCarrito");
+const precioTotal = document.getElementById("precioTotal");
 
 // Creo dinamicamente las vistas de las tarjetas.
 
@@ -135,9 +137,9 @@ function actualizarCarrito(){
 
         ventanaCarrito.appendChild(div);
     })
+    contadorCarrito.innerHTML = carrito.length; // hago un contador de productos en el icono flotante.
+    precioTotal.innerHTML = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0); // por cada producto agregado al carrito, se aplica un acumulador, hace que se sumen los productos.
 }
-
-
 
 
 //--- Suma de productos agregados al carrito ---//
