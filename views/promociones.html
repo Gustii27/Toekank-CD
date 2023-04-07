@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel='stylesheet' type='text/css' media='screen' href='../public/css/style.css'>
     <script defer src="../js/main.js"></script>
+    <!--script defer src="../js/script.js"></script-->
         
 </head>
 <body>
@@ -60,8 +61,8 @@
         <section>
           <h2>Packs de Fotografías y Books</h2>
 
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col carousel slide" id="carouselExampleSlidesOnly" data-bs-ride="carousel">
+          <div class="row row-cols-1 row-cols-md-3 g-4 tarjetasProd">
+            <!--div class="col carousel slide" id="carouselExampleSlidesOnly" data-bs-ride="carousel">
               <div class="card h-70">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -118,10 +119,11 @@
                   <button type="button" class="button-contacts btn-add-prod">Agregar al Carrito</button>
                 </div>
               </div>
-            </div>
+            </div-->
+          </div>
 
           <button type="button" class="btn btn-primary floating-icon" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-cart-shopping"></i><span id="contadorCarrito">0</span>
           </button>
           
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -135,6 +137,7 @@
                   <!-- Contenido de la ventana flotante -->
                   <!-- Agregar con JS los items -->
                 </div>
+                <p class="card-text precioProducto">Precio Total: $<span id="precioTotal">0</span></p>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
                   <button type="button" class="btn btn-primary">Confirmar Compra</button>
