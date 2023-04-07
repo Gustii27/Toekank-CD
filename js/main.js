@@ -46,7 +46,7 @@ const stockProductos = [
 
 // Traigo al DOM los documentos del HTML
 const tarjetasProd = document.querySelector(".tarjetasProd");
-const ventanaCarrito = document.querySelector(".modal-body");
+const ventanaCarrito = document.getElementById("vistaCarrito");
 const contadorCarrito = document.getElementById("contadorCarrito");
 const precioTotal = document.getElementById("precioTotal");
 
@@ -132,6 +132,7 @@ function actualizarCarrito(){
         <p>${prod.titulo}</p>
         <p>Precio: $${prod.precio}
         <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
+        <p>Precio total: $${prod.precio * prod.cantidad}</p>
         <button class="botonEliminar" id="${prod.id}"><i class="fa-solid fa-trash"></button>`
 
         div.querySelector(".botonEliminar").addEventListener("click", () => {
@@ -141,7 +142,7 @@ function actualizarCarrito(){
         ventanaCarrito.appendChild(div);
     })
     contadorCarrito.innerHTML = carrito.length; // hago un contador de productos en el icono flotante.
-    precioTotal.innerHTML = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0); // por cada producto agregado al carrito, se aplica un acumulador, hace que se sumen los productos.
+    /*precioTotal.innerHTML = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0);*/ // por cada producto agregado al carrito, se aplica un acumulador, hace que se sumen los productos.
 }
 
 // Segunda vista dinámica al presionar el boton de confirmar compra.
@@ -153,7 +154,7 @@ function mostrarCarrito() {
     
     carrito.forEach((producto) => {
         const divItems = document.createElement("div");
-        divItems.className = "container text-center item-carrito"
+        divItems.className = "container text-center"
         divItems.innerHTML = `
         <div class="row">
             <div class="col align-self-center">
@@ -162,7 +163,7 @@ function mostrarCarrito() {
               <p>Precio total: $${producto.precio * producto.cantidad}</p>  
             </div>
 
-            <div class=""col align-self-center">
+            <div class="col align-self-center">
                 <div class="opciones-pago">
                     <label for="cuotas">Selecciona la cantidad de cuotas:</label>
                     <select id="cuotas" name="cuotas">
@@ -183,7 +184,6 @@ btnConfirmarCompra.addEventListener("click", () => {
     ventanaCarrito.style.display = "none";
     document.getElementById("vistaPagar").style.display = "block";
 });
-
 
 
 
