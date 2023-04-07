@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel='stylesheet' type='text/css' media='screen' href='../public/css/style.css'>
     <script defer src="../js/main.js"></script>
-    <!--script defer src="../js/script.js"></script-->
         
 </head>
 <body>
@@ -62,68 +61,11 @@
           <h2>Packs de Fotografías y Books</h2>
 
           <div class="row row-cols-1 row-cols-md-3 g-4 tarjetasProd">
-            <!--div class="col carousel slide" id="carouselExampleSlidesOnly" data-bs-ride="carousel">
-              <div class="card h-70">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="../public/img/packs-fotos-1.jpg" class="card-img-top img-fluid altura-img" alt="PacksFotos">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="../public/img/pack-fotos-2.jpg" class="card-img-top img-fluid altura-img" alt="PacksFotos">
-                  </div>
-                </div>  
-                <div class="card-body">
-                  <h5 class="card-title">Packs de Fotos</h5>
-                  <p class="card-text">¿Te gustaría rememorar los mejores momentos? Hay disponibilidad de Packs de 50 imágenes, 100 imágenes y 150 imágenes.</p>
-                  <label><input type="checkbox" class="chck-price" id="1"> Packs 50 fotos $2.000.</label><br>
-                  <label><input type="checkbox" class="chck-price" id="2"> Packs 100 fotos $3.900.</label><br>
-                  <label><input type="checkbox" class="chck-price" id="3"> Packs 150 fotos $5.000.</label><br>
-                  <button type="button" class="button-contacts btn-add-prod">Agregar al Carrito</button>
-                </div>
-              </div>
-            </div>
 
-            <div class="col carousel slide" id="carouselExampleSlidesOnly" data-bs-ride="carousel">
-              <div class="card h-70">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="../public/img/album-fotos.jpg" class="card-img-top img-fluid altura-img" alt="AlbumFotos">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="../public/img/album-fotos-2.jpg" class="card-img-top img-fluid altura-img" alt="AlbumFotos">
-                  </div>
-                </div>  
-                <div class="card-body">
-                  <h5 class="card-title">Album de Fotos</h5>
-                  <p class="card-text">Los mejores Albums de Fotos con un diseño personalizado, con el cual podrá mostrarle a todos sus seres queridos sus momentos más preciados.</p>
-                  <p class="card-text" id="4">Precio: $6.000.-</p>
-                  <button type="button" class="button-contacts btn-add-prod">Agregar al Carrito</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col carousel slide" id="carouselExampleSlidesOnly" data-bs-ride="carousel">
-              <div class="card h-70">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="../public/img/chanel.jpg" class="card-img-top img-fluid altura-img" alt="EdicionPhotoshop">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="../public/img/chanel.jpg" class="card-img-top img-fluid altura-img" alt="EdicionPhotoshop">
-                  </div>
-                </div>  
-                <div class="card-body">
-                  <h5 class="card-title">Edición de Photoshop</h5>
-                  <p class="card-text">¿Desea sobresalir entre sus queridos adquiriendo fotos de una mayor calidez, mayor calidad y contraste?. Tiene a disposición este adicional de Edición Fotografica.</p>
-                  <p class="card-text" id="5">Precio: $2.500.-</p>
-                  <button type="button" class="button-contacts btn-add-prod">Agregar al Carrito</button>
-                </div>
-              </div>
-            </div-->
           </div>
 
           <button type="button" class="btn btn-primary floating-icon" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <i class="fa-solid fa-cart-shopping"></i><span id="contadorCarrito">0</span>
+            <i class="fa-solid fa-cart-shopping"></i><span id="contadorCarrito"> 0</span>
           </button>
           
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -138,9 +80,12 @@
                   <!-- Agregar con JS los items -->
                 </div>
                 <p class="card-text precioProducto">Precio Total: $<span id="precioTotal">0</span></p>
+                <div id="vistaPagar">
+                  <div class="itemsCarrito"></div>
+                </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
-                  <button type="button" class="btn btn-primary">Confirmar Compra</button>
+                  <button type="button" class="btn btn-primary confirmarCompra">Confirmar Compra</button>
                 </div>
               </div>
             </div>

@@ -50,6 +50,9 @@ const ventanaCarrito = document.querySelector(".modal-body");
 const contadorCarrito = document.getElementById("contadorCarrito");
 const precioTotal = document.getElementById("precioTotal");
 
+const vistaPagar = document.getElementById("vistaPagar");
+const btnConfirmarCompra = document.querySelector(".confirmarCompra");
+
 // Creo dinamicamente las vistas de las tarjetas.
 
 function mostrarProductos (){
@@ -141,7 +144,53 @@ function actualizarCarrito(){
     precioTotal.innerHTML = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0); // por cada producto agregado al carrito, se aplica un acumulador, hace que se sumen los productos.
 }
 
-// Creo una ventana aparte para continuar con la compra.
+// Segunda vista dinámica al presionar el boton de confirmar compra.
+
+function mostrarCarrito() {
+    const itemsCarrito = document.querySelector(".itemsCarrito");
+
+    itemsCarrito.innerHTML = "";
+    
+    carrito.forEach((producto) => {
+        const divItems = document.createElement("div");
+        divItems.className = "container text-center item-carrito"
+        divItems.innerHTML = `
+        <div class="row">
+            <div class="col align-self-center">
+              <p class="">${producto.titulo}</p>
+              <p>Cantidad: ${producto.cantidad}</p>
+              <p>Precio total: $${producto.precio * producto.cantidad}</p>  
+            </div>
+
+            <div class=""col align-self-center">
+                <div class="opciones-pago">
+                    <label for="cuotas">Selecciona la cantidad de cuotas:</label>
+                    <select id="cuotas" name="cuotas">
+                        <option value="1">1 cuota</option>
+                        <option value="2">3 cuotas</option>
+                        <option value="3">6 cuotas</option>
+                    </select>
+                    <button id="pagar">Pagar</button>
+                </div>
+            </div>
+        </div>`;
+        itemsCarrito.append(divItems);
+    })
+}
+
+btnConfirmarCompra.addEventListener("click", () => {
+    mostrarCarrito();
+    ventanaCarrito.style.display = "none";
+    document.getElementById("vistaPagar").style.display = "block";
+});
+
+
+
+
+
+
+
+
 
 
 //--- Suma de productos agregados al carrito ---//
