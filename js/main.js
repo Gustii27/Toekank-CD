@@ -2,67 +2,52 @@ const stockProductos = [
     {
         id: 1,
         titulo: "Packs de Fotos Chico (50 fotografías)",
-<<<<<<< HEAD
         precio: 2000,
-=======
         descripcion: "¿Te gustaría rememorar los mejores momentos? Hay disponibilidad de Packs de 50 imágenes, 100 imágenes y 150 imágenes.",
         img: "../public/img/packs-fotos-1.jpg",
         precio: 2000,
         radio: -1,
->>>>>>> 04b606da69f22550644c6dc4989d1bc814fcf315
         cantidad: 1
     },
     {
         id: 2,
         titulo: "Packs de Fotos Mediano (100 fotografías)",
-<<<<<<< HEAD
         precio: 3900,
-=======
         descripcion: "¿Te gustaría rememorar los mejores momentos? Hay disponibilidad de Packs de 50 imágenes, 100 imágenes y 150 imágenes.",
         img: "../public/img/packs-fotos-1.jpg",
         precio: 3900,
         radio: -2,
->>>>>>> 04b606da69f22550644c6dc4989d1bc814fcf315
         cantidad: 1 
     },
     {
         id: 3,
         titulo: "Packs de Fotos Grande (150 fotografías)",
-<<<<<<< HEAD
         precio: 5000,
-=======
         descripcion: "¿Te gustaría rememorar los mejores momentos? Hay disponibilidad de Packs de 50 imágenes, 100 imágenes y 150 imágenes.",
         img: "../public/img/packs-fotos-1.jpg",
         precio: 5000,
         radio: -3,
->>>>>>> 04b606da69f22550644c6dc4989d1bc814fcf315
         cantidad: 1 
     },
     {
         id: 4,
         titulo: "Album de Fotos",
-<<<<<<< HEAD
-=======
+
         descripcion: "Los mejores Albums de Fotos con un diseño personalizado, con el cual podrá mostrarle a todos sus seres queridos sus momentos más preciados.",
         img: "../public/img/album-fotos-2.jpg",
->>>>>>> 04b606da69f22550644c6dc4989d1bc814fcf315
         precio: 6000,
         cantidad: 1 
     },
     {
         id: 5,
         titulo: "Edicion de Photoshop",
-<<<<<<< HEAD
-=======
         descripcion: "¿Desea sobresalir entre sus queridos adquiriendo fotos de una mayor calidez, mayor calidad y contraste?. Tiene a disposición este adicional de Edición Fotografica.",
         img: "../public/img/chanel.jpg",
->>>>>>> 04b606da69f22550644c6dc4989d1bc814fcf315
         precio: 2500,
         cantidad: 1 
     },
 ];
 
-<<<<<<< HEAD
 const contenedorDeProductos = document.querySelector(".modal-body"); // traigo el modal donde quiero pintar los productos.
 
 function mostrarProductos() {
@@ -107,7 +92,7 @@ function eliminarProd(id){
     const index = carrito.findIndex(prod => prod.id === parseInt(id));
     carrito.splice(index, 1);
 }
-=======
+
 // Traigo al DOM los documentos del HTML
 const tarjetasProd = document.querySelector(".tarjetasProd");
 const ventanaCarrito = document.querySelector(".modal-body");
@@ -185,7 +170,6 @@ function eliminarDelCarrito (prodId) {
 
 function actualizarCarrito(){
     ventanaCarrito.innerHTML = "";
->>>>>>> 04b606da69f22550644c6dc4989d1bc814fcf315
 
     carrito.forEach((prod) => {
         const div = document.createElement("div");
