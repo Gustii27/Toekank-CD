@@ -141,6 +141,8 @@ function actualizarCarrito(){
     precioTotal.innerHTML = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0); // por cada producto agregado al carrito, se aplica un acumulador, hace que se sumen los productos.
 }
 
+// Creo una ventana aparte para continuar con la compra.
+
 
 //--- Suma de productos agregados al carrito ---//
 
