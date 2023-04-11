@@ -127,13 +127,20 @@ function actualizarCarrito(){
 
     carrito.forEach((prod) => {
         const div = document.createElement("div");
-        div.className = "d-flex flex-row mb-3 justify-content-around";
+        div.className = "row mb-3 justify-content-around";
         div.innerHTML = `
-        <p>${prod.titulo}</p>
-        <p>Precio: $${prod.precio}
-        <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
-        <p>Precio total: $${prod.precio * prod.cantidad}</p>
-        <button class="botonEliminar" id="${prod.id}"><i class="fa-solid fa-trash"></button>`
+        <div class="col-md-3">    
+            <p>${prod.titulo}</p>
+        </div>
+        <div class="col-md-3">
+            <p>Precio: $${prod.precio}
+        </div>
+        <div class="col-md-3">
+            <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
+        </div>
+        <div class="col-md-3">
+            <button class="botonEliminar btn btn-danger" id="${prod.id}"><i class="fa-solid fa-trash"></i></button>
+        </div>`
 
         div.querySelector(".botonEliminar").addEventListener("click", () => {
             eliminarDelCarrito()
@@ -142,7 +149,7 @@ function actualizarCarrito(){
         ventanaCarrito.appendChild(div);
     })
     contadorCarrito.innerHTML = carrito.length; // hago un contador de productos en el icono flotante.
-    /*precioTotal.innerHTML = carrito.reduce((acumulador, prod) => acumulador + prod.precio, 0);*/ // por cada producto agregado al carrito, se aplica un acumulador, hace que se sumen los productos.
+    precioTotal.innerHTML = carrito.reduce((acumulador, prod) => acumulador + prod.precio * prod.cantidad, 0); // por cada producto agregado al carrito, se aplica un acumulador, hace que se sumen los productos.
 }
 
 // Segunda vista dinámica al presionar el boton de confirmar compra.
@@ -181,8 +188,8 @@ function mostrarCarrito() {
 
 btnConfirmarCompra.addEventListener("click", () => {
     mostrarCarrito();
-    ventanaCarrito.style.display = "none";
-    document.getElementById("vistaPagar").style.display = "block";
+    ventanaCarrito.style.display = "none"; // Oculto la pantalla dinámica anterior.
+    document.getElementById("vistaPagar").style.display = "block"; // Muestro la segunda vista dinámica.
 });
 
 
