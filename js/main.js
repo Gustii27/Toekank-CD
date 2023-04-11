@@ -53,6 +53,9 @@ const precioTotal = document.getElementById("precioTotal");
 const vistaPagar = document.getElementById("vistaPagar");
 const btnConfirmarCompra = document.querySelector(".confirmarCompra");
 
+// Creo un carrito vacio, donde se van a ir agregando los productos.
+let carrito = [];
+
 // Creo dinamicamente las vistas de las tarjetas.
 
 function mostrarProductos (){
@@ -93,9 +96,6 @@ function mostrarProductos (){
     });
 }
 mostrarProductos();
-
-// Creo un carrito vacio, donde se van a ir agregando los productos.
-const carrito = [];
 
 // Creo la función de agregar al carrito con el boton que está estático en el HTML.
 function agregarAlCarrito (prodId){
@@ -147,6 +147,7 @@ function actualizarCarrito(){
         })
 
         ventanaCarrito.appendChild(div);
+        localStorage.setItem("carrito", JSON.stringify(carrito)); // guardo la informacion del carrito en el localStorage
     })
     contadorCarrito.innerHTML = carrito.length; // hago un contador de productos en el icono flotante.
     precioTotal.innerHTML = carrito.reduce((acumulador, prod) => acumulador + prod.precio * prod.cantidad, 0); // por cada producto agregado al carrito, se aplica un acumulador, hace que se sumen los productos.
@@ -198,24 +199,48 @@ function mostrarCarrito() {
     const botonVolver = document.createElement("button"); //creo un boton volver dentro de la segunda vista dinámica, para que el usuario pueda volver al carrito a modificar los productos.
     botonVolver.innerHTML = "Volver al carrito";
     botonVolver.addEventListener("click", () => {
-        document.getElementById("vistaPagar").style.display = "none";
-        ventanaCarrito.style.display = "block";
+        document.getElementById("vistaPagar").style.display = "none"; // oculta la pantalla anterior al darle click al boton volver.
+        ventanaCarrito.style.display = "block"; // muestra la nueva ventana.
     })
     divPago.append(botonVolver);
 }
 
 btnConfirmarCompra.addEventListener("click", () => {
     mostrarCarrito();
-    ventanaCarrito.style.display = "none"; // Oculto la pantalla dinámica anterior.
+    ventanaCarrito.style.display = "none"; // Oculto la pantalla dinámica anterior al presionar sobre el boton de confirmar compra.
     document.getElementById("vistaPagar").style.display = "block"; // Muestro la segunda vista dinámica.
 });
 
+function cargarCarritoDesdeLocalStorage() { // creo la funcion de cargar el carrito del storage.
+    const carritoGuardado = localStorage.getItem('carrito'); // creo una variable donde me va a tomar la informacion del array almacenada en el storagelocal
+    if (carritoGuardado) { // Si hay información toma esa esa info y la convierte en un objeto con el json.parse
+      carrito = JSON.parse(carritoGuardado);
+      actualizarCarrito(); // vuelvo a ejecutar la funcion de actualizar el carrito.
+    }
+}
 
 
+// GUARDAR LA INFORMACIÓN EN EL LOCALSTORAGE EN LA PAGINA DE CONTACTO
+// Traigo al DOM la información necesaria:
 
+let userName = document.querySelector(".userName");
+let userApellido = document.querySelector(".userApellido");
+let userMail = document.querySelector(".userMail");
+let btnContacts = document.querySelector(".btnContacts");
 
+let usuarios = []; // creo un array vacio con los usuarios.
 
-
+btnContacts.addEventListener("click", () => { // tomo la clase del boton y le doy el evento click, para que agregue la información que ingresa el usuario
+  
+    let usuario = { // creo un objeto con toda la informacion que quiero que se almacene en el array.
+    name: userName.value,
+    apellido: userApellido.value,
+    mail: userMail.value
+  };
+  
+  usuarios.push(usuario); // la informacion la pusheo en el array.
+  localStorage.setItem("usuarios", JSON.stringify(usuarios)); // guardo la informacion en el local storage en forma de texto.
+});
 
 
 //--- Suma de productos agregados al carrito ---//
