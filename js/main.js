@@ -159,6 +159,8 @@ function mostrarCarrito() {
 
     itemsCarrito.innerHTML = "";
     
+    let total = 0;
+
     carrito.forEach((producto) => {
         const divItems = document.createElement("div");
         divItems.className = "container text-center"
@@ -167,9 +169,18 @@ function mostrarCarrito() {
             <div class="col align-self-center">
               <p class="">${producto.titulo}</p>
               <p>Cantidad: ${producto.cantidad}</p>
-              <p>Precio total: $${producto.precio * producto.cantidad}</p>  
+              <p>Precio total productos: $${producto.precio * producto.cantidad}</p>  
             </div>
+        </div>`;
+        itemsCarrito.append(divItems);
 
+        total += producto.precio * producto.cantidad;
+    })
+
+    const divPago = document.createElement("div"); // Creo un div aparte para que la opcion de pago en cuotas se imprima en pantalla una sola vez, y no por cada producto agregado, por eso está fuera del forEach.
+    divPago.className = "container text-center";
+    divPago.innerHTML = `
+        <div class="row">
             <div class="col align-self-center">
                 <div class="opciones-pago">
                     <label for="cuotas">Selecciona la cantidad de cuotas:</label>
@@ -182,8 +193,15 @@ function mostrarCarrito() {
                 </div>
             </div>
         </div>`;
-        itemsCarrito.append(divItems);
+    itemsCarrito.append(divPago);
+
+    const botonVolver = document.createElement("button"); //creo un boton volver dentro de la segunda vista dinámica, para que el usuario pueda volver al carrito a modificar los productos.
+    botonVolver.innerHTML = "Volver al carrito";
+    botonVolver.addEventListener("click", () => {
+        document.getElementById("vistaPagar").style.display = "none";
+        ventanaCarrito.style.display = "block";
     })
+    divPago.append(botonVolver);
 }
 
 btnConfirmarCompra.addEventListener("click", () => {
